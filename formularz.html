@@ -7,6 +7,8 @@
 
 <body>
 
+    <a href="index.html">Strona główna</a> <br>
+
     <form action="formularz.html" method="POST">
 
         <label for="name">Imię:</label>
@@ -33,10 +35,10 @@
         <label>Płeć:</label>
         <input type="radio" id="sex1" name="sex"><label for="sex1">Mężczyzna</label>
         <input type="radio" id="sex2" name="sex"><label for="sex2">Kobieta</label>
-        <input type="radio" id="sex3" name="sex"><label for="sex3">Inna</label>
+        <input type="radio" id="sex3" name="sex"><label for="sex3">Inna</label><br><br>
 
         <label for="comments">Uwagi:</label>
-        <textarea id="comments" name="comments"></textarea>
+        <textarea id="comments" name="comments" cols="1"></textarea><br><br>
 
         <label for="phoneNumber">Numer telefonu:</label>
         <input type="number" id="phoneNumber" name="phoneNumber"><br><br>
@@ -45,10 +47,10 @@
         <input type="date" id="dateOfBirth" name="dateOfBirth"><br><br>
 
         <label for="pesel">Pesel:</label>
-        <input type="number" id="pesel" name="pesel" max="99999999999"><br><br>
+        <input type="number" id="pesel" name="pesel"><br><br>
 
         <label for="postalCode">Kod pocztowy:</label>
-        <input type="number" id="postalCode" name="postalCode" maxlength="99999"><br><br>
+        <input type="number" id="postalCode" name="postalCode"><br><br>
 
         <input type="submit" value="Prześlij">
     </form>

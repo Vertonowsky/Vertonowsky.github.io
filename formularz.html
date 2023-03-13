@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+
+    <form action="formularz.html" method="POST">
+
+        <label for="name">Imię:</label>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="surname">Nazwisko:</label>
+        <input type="text" id="surname" name="surname"><br><br>
+
+        <label for="street">Ulica:</label>
+        <input type="text" id="street" name="street"><br><br>
+
+        <label for="city">Miasto:</label>
+        <input type="text" id="city" name="city"><br><br>
+
+        <label for="homeNumber">Numer domu:</label>
+        <input type="number" id="homeNumber" name="homeNumber"><br><br>
+
+        <label for="flatNumber">Numer mieszkania:</label>
+        <input type="number" id="flatNumber" name="flatNumber"><br><br>
+
+        <label for="driversLicense">Posiadasz prawo jazdy?</label>
+        <input type="checkbox" id="driversLicense" name="driversLicense"><br><br><label>Tak</label>
+
+        <label>Płeć:</label>
+        <input type="radio" id="sex1" name="sex"><br><br><label for="sex1">Mężczyzna</label>
+        <input type="radio" id="sex2" name="sex"><br><br><label for="sex2">Kobieta</label>
+        <input type="radio" id="sex3" name="sex"><br><br><label for="sex3">Inna</label>
+
+        <label for="comments">Uwagi:</label>
+        <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+
+        <label for="phoneNumber">Numer telefonu:</label>
+        <input type="number" id="phoneNumber" name="phoneNumber"><br><br>
+
+        <label for="dateOfBirth">Data urodzenia:</label>
+        <input type="date" id="dateOfBirth" name="dateOfBirth"><br><br>
+
+        <label for="pesel">Pesel:</label>
+        <input type="number" id="pesel" name="pesel" maxlength="11"><br><br>
+
+        <label for="postalCode">Kod pocztowy:</label>
+        <input type="number" id="postalCode" name="postalCode" maxlength="5"><br><br>
+
+        <input type="submit" value="Prześlij">
+    </form>
+
+</body>
+</html>

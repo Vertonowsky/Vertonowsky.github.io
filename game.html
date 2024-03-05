@@ -4,6 +4,7 @@
 		<title> Memory game </title>
 		<meta charset="UTF-8">
 
+		<link rel="stylesheet" type="text/css" href="styles/main.css">
 		<link rel="stylesheet" type="text/css" href="styles/game.css">
 
 	</head>
@@ -13,6 +14,8 @@
 		<div id="content">
 
 			<div id="top_panel">
+
+				<h1 class="title">Memory</h1>
 
 				<div id="mode_panel">
 					<h2>Choose game mode:</h2>
@@ -27,12 +30,10 @@
 					<button class="difficulty_3" onclick="selectDifficulty(3)">Hard</button>
 				</div>
 
-			</div>
-
-			<div id="current_player_panel">
-
-				<h2>Ruch gracza: </h2>
-				<div id="current_player_info"></div>
+				<div id="game_info_panel">
+					<h2 id="mode_title">Single player: </h2>
+					<div id="difficulty_info"></div>
+				</div>
 
 			</div>
 
@@ -42,14 +43,14 @@
 
 			<div id="points_panel">
 
-				<div class="points_content p1">
-					<p>Player 1</p>
-					<div id="p1_points">0</div>
+				<div id="p1_points_container" class="points_content">
+					<span>P1 points: </span>
+					<span id="p1_points">0</span>
 				</div>
 
-				<div class="points_content p2">
-					<p>Player 2</p>
-					<div id="p2_points">0</div>
+				<div id="p2_points_container" class="points_content">
+					<span>P2 points: </span>
+					<span id="p2_points">0</span>
 				</div>
 
 			</div>
@@ -60,19 +61,13 @@
 
 	<script>
 
-        let movesHistory = [];
-        let allFound = [];
         const initialCards = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'Z', 'U'];
-
-        // Double the letters
         const cards = [...initialCards, ...initialCards];
 
-        // Shuffle cards positions
-        for (let i = cards.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [cards[i], cards[j]] = [cards[j], cards[i]];
-        }
+		let movesHistory = [];
+		let allFound = [];
 
+		let currentPlayer = 0;
         let flippedCards = [];
         let flippedIndexes = [];
 
@@ -82,16 +77,17 @@
         let pointsP1 = 0;
         let pointsP2 = 0;
 
-        let currentPlayer = 0;
-
+		const difficultyPanel = document.getElementById('difficulty_panel');
+		const gameInfoPanel = document.getElementById('game_info_panel');
         const memoryBoard = document.getElementById('memory-board');
         const modePanel = document.getElementById('mode_panel');
-        const difficultyPanel = document.getElementById('difficulty_panel');
-        const currentPlayerPanel = document.getElementById('current_player_panel');
         const pointsPanel = document.getElementById("points_panel");
 
         const pointsP1Element = document.getElementById("p1_points");
         const pointsP2Element = document.getElementById("p2_points");
+
+		const pointsP1Container = document.getElementById("p1_points_container");
+		const pointsP2Container = document.getElementById("p2_points_container");
 
         function selectMode(mode) {
             modePanel.style.display = "none";
@@ -99,25 +95,43 @@
             if (mode === 'single') {
                 gameMode = 'single';
                 difficultyPanel.style.display = "block";
-                return;
             }
 
-            if (mode === 'multi') {
+            else if (mode === 'multi') {
                 gameMode = 'multi';
+				gameInfoPanel.style.display = "inline-block";
+				document.getElementById("difficulty_info").style.display = "none";
+				document.getElementById("mode_title").innerHTML = "Multi player"
                 startGame();
-                return;
             }
         }
 
         function selectDifficulty(difficulty) {
             gameDifficulty = difficulty;
             difficultyPanel.style.display = "none";
+			gameInfoPanel.style.display = "inline-block";
+			document.getElementById("difficulty_info").innerHTML = "<div class='difficulty_2'>Medium</div>";
+
             startGame();
         }
 
         function updateCurrentPlayer() {
-            document.getElementById("current_player_info").innerHTML = currentPlayer;
+			if (currentPlayer === "p1") {
+				pointsP2Container.classList.remove("active");
+				pointsP1Container.classList.add("active");
+			}
+			else {
+				pointsP1Container.classList.remove("active");
+				pointsP2Container.classList.add("active");
+			}
         }
+
+		function shuffleBoard() {
+			for (let i = cards.length - 1; i > 0; i--) {
+				const j = Math.floor(Math.random() * (i + 1));
+				[cards[i], cards[j]] = [cards[j], cards[i]];
+			}
+		}
 
         function updatePlayerPoints() {
             if (currentPlayer === "p1") {
@@ -136,8 +150,7 @@
             if (gameMode === 'multi')
                 currentPlayer = Math.random() < 0.5 ? 'p1' : 'p2';
 
-            currentPlayerPanel.style.display = "block";
-            pointsPanel.style.display = "block";
+            pointsPanel.style.display = "flex";
             updateCurrentPlayer();
 
             createBoard();
@@ -162,6 +175,8 @@
         }
 
         function createBoard() {
+			shuffleBoard();
+
             cards.forEach((card, index) => {
                 const cardElement = document.createElement('div');
                 cardElement.classList.add('card');
@@ -238,13 +253,14 @@
             flippedIndexes = [];
 
             if (!gotPoint) {
-                if (currentPlayer === "p1")
-                    currentPlayer = "p2";
-                else
-                    currentPlayer = "p1";
+				if (currentPlayer === "p1")
+					currentPlayer = "p2";
+				else
+					currentPlayer = "p1";
 
-                updateCurrentPlayer();
-            }
+				updateCurrentPlayer();
+			}
+
 
             if (gameMode === 'single' && currentPlayer === 'p2' && document.querySelectorAll('.card[data-clicked="false"]').length !== 0)
                 makeBotMove();
@@ -264,6 +280,32 @@
             unclickedCards[randomIndex2].click();
         }
 
+		function clickPair(list) {
+			for (let i = list.length -1; i >= 0; i--) {
+				const currentMove = list[i];
+				const matchingMove = list.find(move => move.letter === currentMove.letter && move.index !== currentMove.index);
+
+				if (matchingMove !== undefined) {
+					// Found two the same letters in moves history
+					const currentCard = document.querySelectorAll('.card[data-index="' + currentMove.index +'"]')[0];
+					const matchingCard = document.querySelectorAll('.card[data-index="' + matchingMove.index +'"]')[0];
+
+					if (currentCard === undefined || matchingCard === undefined)
+						continue;
+
+					// Check if cards were ever selected
+					if (currentCard.dataset.clicked === "true" || matchingCard.dataset.clicked === "true") {
+						continue;
+					}
+
+					currentCard.click();
+					matchingCard.click();
+					return true;
+				}
+			}
+			return false;
+		}
+
         function makeBotMove() {
 			// EASY = select number cards
             if (gameDifficulty === 1) {
@@ -273,58 +315,18 @@
 
 			// MEDIUM = remember last 5 moves (10 cards)
             if (gameDifficulty === 2) {
-                for (let i = movesHistory.length -1; i >= 0; i--) {
-                    const currentMove = movesHistory[i];
-                    const matchingMove = movesHistory.find(move => move.letter === currentMove.letter && move.index !== currentMove.index);
+                const clicked = clickPair(movesHistory);
 
-                    if (matchingMove !== undefined) {
-                        // Found two the same letters in moves history
-                        const currentCard = document.querySelectorAll('.card[data-index="' + currentMove.index +'"]')[0];
-                        const matchingCard = document.querySelectorAll('.card[data-index="' + matchingMove.index +'"]')[0];
-
-						if (currentCard === undefined || matchingCard === undefined)
-							continue;
-
-						// Check if cards were ever selected
-						if (currentCard.dataset.clicked === "true" || matchingCard.dataset.clicked === "true") {
-							continue;
-						}
-
-                        currentCard.click();
-                        matchingCard.click();
-                        return;
-                    }
-                }
-
-				click2RandomElements();
+				if (!clicked)
+					click2RandomElements();
             }
 
 			// HARD = remember all moves
 			if (gameDifficulty === 3) {
-				for (let i = allFound.length -1; i >= 0; i--) {
-					const currentMove = allFound[i];
-					const matchingMove = allFound.find(move => move.letter === currentMove.letter && move.index !== currentMove.index);
+				const clicked = clickPair(allFound);
 
-					if (matchingMove !== undefined) {
-						// Found two the same letters in moves history
-						const currentCard = document.querySelectorAll('.card[data-index="' + currentMove.index +'"]')[0];
-						const matchingCard = document.querySelectorAll('.card[data-index="' + matchingMove.index +'"]')[0];
-
-						if (currentCard === undefined || matchingCard === undefined)
-							continue;
-
-						// Check if cards were ever selected
-						if (currentCard.dataset.clicked === "true" || matchingCard.dataset.clicked === "true") {
-							continue;
-						}
-
-						currentCard.click();
-						matchingCard.click();
-						return;
-					}
-				}
-
-				click2RandomElements();
+				if (!clicked)
+					click2RandomElements();
 			}
         }
 

@@ -1,3 +1,7 @@
+body {
+    background: #242424;
+}
+
 #content {
     position: relative;
     display: flex;
@@ -12,96 +16,134 @@
     position: relative;
     width: 100%;
     text-align: center;
-    margin-bottom: 30px;
+    color: #E6E6E6;
 }
 
-#top_panel button {
-    padding: 8px 12px;
-    border: none;
-    border-radius: 12px;
-    color: #fff;
-    cursor: pointer;
-    transition: background 0.3s;
-}
+    #top_panel h1 {
+        position: relative;
+        box-sizing: border-box;
+        font-size: 3em;
+        margin-bottom: 15px;
+    }
 
-.button_single {
-    background: #2DC244;
-}
-
-.button_single:hover {
-    background: #31D149;
-}
-
-.button_multi {
-    background: #C22D86;
-}
-
-.button_multi:hover {
-    background: #D13190;
-}
-
-#mode_panel {
-    display: block;
-}
-
-#difficulty_panel {
-    display: none;
-}
-
-.difficulty_1 {
-    background: #24E014;
-}
-
-.difficulty_2 {
-    background: #E09B14;
-}
-
-.difficulty_3 {
-    background: #E01414;
-}
+    #top_panel h2 {
+        margin-bottom: 14px;
+    }
 
 
-#current_player_panel {
-    display: none;
-    margin-bottom: 20px;
-}
+    #top_panel button {
+        padding: 12px 18px;
+        border: none;
+        border-radius: 12px;
+        font-size: 15px;
+        font-weight: bold;
+        color: #F2F2F2;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
 
-#current_player_panel h2 {
-    margin-bottom: 5px;
-}
+    .button_single {
+        background: #239936;
+    }
 
-#current_player_info {
-    text-align: center;
-}
+    .button_single:hover {
+        background: #28AD3D;
+    }
+
+    .button_multi {
+        background: #AB2776;
+    }
+
+    .button_multi:hover {
+        background: #BD2B82;
+    }
+
+    #mode_panel {
+        display: block;
+    }
+
+    #difficulty_panel {
+        display: none;
+    }
+
+        .difficulty_1 {
+            background: #239936;
+        }
+
+        .difficulty_2 {
+            background: #CF8312;
+        }
+
+        .difficulty_3 {
+            background: #A11A1A;
+        }
+
+
+        #game_info_panel {
+            position: relative;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        #game_info_panel h2 {
+            margin: 0 10px 0 0;
+            display: inline-block;
+        }
+
+        #difficulty_info {
+            position: relative;
+            display: inline-block;
+            width: 120px;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+        }
+
+        #game_info_panel .difficulty_1,
+        #game_info_panel .difficulty_2,
+        #game_info_panel .difficulty_3 {
+            position: relative;
+            width: 100%;
+            font-weight: bold;
+            border-radius: 12px;
+            padding: 12px 18px;
+        }
 
 
 #points_panel {
     position: relative;
     width: 400px;
     align-items: center;
-    align-content: center;
+    justify-content: center;
     margin-top: 20px;
     display: none;
-}
-
-.points_content {
-    position: relative;
-    width: 48%;
     text-align: center;
-    display: inline-block;
 }
 
-.points_content p {
-    margin-bottom: 4px;
-}
+    .points_content {
+        position: relative;
+        width: 45%;
+        text-align: center;
+        padding: 12px 14px;
+        border-radius: 15px;
+        color: gray;
+    }
 
-.p1 {
-    color: #2DC244;
-}
+    .points_content.active {
+        color: #fff;
+    }
 
-.p2 {
-    color: #C22D86;
-}
+    #p1_points_container.active {
+        background: #239936;
+    }
+
+    #p2_points_container.active {
+        background: #C22D86;
+    }
+
+    .points_content p {
+        margin: 0 0 4px 0;
+    }
 
 
 #memory-board {
@@ -110,27 +152,27 @@
     gap: 10px;
 }
 
-.card {
-    width: 100px;
-    height: 100px;
-    background: #3498db;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-}
+    .card {
+        width: 100px;
+        height: 100px;
+        background: #3498db;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+    }
 
-.card:hover {
-    background: #43AAF0;
-}
+    .card:hover {
+        background: #43AAF0;
+    }
 
-.card.p1 {
-    background: #2DC244;
-}
+    .card.p1 {
+        background: #239936;
+    }
 
-.card.p2 {
-    background: #C22D86;
-}
+    .card.p2 {
+        background: #C22D86;
+    }

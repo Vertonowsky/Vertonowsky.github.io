@@ -113,7 +113,7 @@
 .card {
     width: 100px;
     height: 100px;
-    background-color: #3498db;
+    background: #3498db;
     color: #fff;
     display: flex;
     align-items: center;
@@ -121,6 +121,10 @@
     font-size: 24px;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
+}
+
+.card:hover {
+    background: #43AAF0;
 }
 
 .card.p1 {

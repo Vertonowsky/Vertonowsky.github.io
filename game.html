@@ -108,7 +108,13 @@
             gameDifficulty = difficulty;
             difficultyPanel.style.display = "none";
 			gameInfoPanel.style.display = "inline-block";
-			document.getElementById("difficulty_info").innerHTML = "<div class='difficulty_2'>Medium</div>";
+
+			if (difficulty === 1)
+				document.getElementById("difficulty_info").innerHTML = "<div class='difficulty_1'>Easy</div>";
+			else if (difficulty === 2)
+				document.getElementById("difficulty_info").innerHTML = "<div class='difficulty_2'>Medium</div>";
+			else if  (difficulty === 3)
+				document.getElementById("difficulty_info").innerHTML = "<div class='difficulty_3'>Hard</div>";
 
             startGame();
         }

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Memory game </title>
+        <meta charset="UTF-8">
+
+        <link rel="stylesheet" type="text/css" href="styles/game.css">
+
+    </head>
+
+    <body>
+
+        <div id="content">
+
+            <div id="top_panel">
+
+                <div id="mode_panel">
+                    <h2>Choose game mode:</h2>
+                    <button class="button_single" onclick="selectMode('single')">One player</button>
+                    <button class="button_multi" onclick="selectMode('multi')">Two players</button>
+                </div>  
+
+                <div id="difficulty_panel">
+                    <h2>Choose difficulty:</h2>
+                    <button class="difficulty_1" onclick="selectDifficulty(1)">Easy</button>
+                    <button class="difficulty_2" onclick="selectDifficulty(2)">Medium</button>
+                    <button class="difficulty_3" onclick="selectDifficulty(3)">Hard</button>
+                </div>  
+
+            </div>
+
+            <div id="current_player_panel">
+
+                <h2>Ruch gracza: </h2>
+                <div id="current_player_info"></div>
+
+            </div>
+
+            <div id="memory-board">
+
+            </div>
+
+            <div id="points_panel">
+
+                <div class="points_content p1">
+                    <p>Player 1</p>
+                    <div id="p1_points">0</div>
+                </div>
+
+                <div class="points_content p2">
+                    <p>Player 2</p>
+                    <div id="p2_points">0</div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </body>
+
+    <script>
+
+          const initialCards = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+
+          // Double the letters
+          const cards = [...initialCards, ...initialCards];
+
+          // Shuffle cards positions
+          for (let i = cards.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [cards[i], cards[j]] = [cards[j], cards[i]];
+          }
+
+          let flippedCards = [];
+          let flippedIndexes = [];
+
+          let gameMode = '';
+          let gameDifficulty = 0;
+
+          let pointsP1 = 0;
+          let pointsP2 = 0;
+
+          let currentPlayer = 0;
+    
+          const memoryBoard = document.getElementById('memory-board');
+          const modePanel = document.getElementById('mode_panel');
+          const difficultyPanel = document.getElementById('difficulty_panel');
+          const currentPlayerPanel = document.getElementById('current_player_panel');
+          const pointsPanel = document.getElementById("points_panel");
+
+          const pointsP1Element = document.getElementById("p1_points");
+          const pointsP2Element = document.getElementById("p2_points");
+
+          function selectMode(mode) {
+            modePanel.style.display = "none";
+
+            if (mode == 'single') {
+                gameMode = 'single';
+                difficultyPanel.style.display = "block";
+                return;
+            }
+
+            if (mode == 'multi') {
+                startGame();
+                return;
+            }
+
+          }
+
+          function selectDifficulty(difficulty) {
+            this.gameDifficulty = difficulty;
+            difficultyPanel.style.display = "none";
+            startGame();
+          }
+
+          function updateCurrentPlayer() {
+            document.getElementById("current_player_info").innerHTML = currentPlayer;
+          }
+
+          function updatePlayerPoints() {
+            if (currentPlayer == "p1") {
+                pointsP1+= 1;
+                pointsP1Element.innerHTML = pointsP1;
+            } else {
+                pointsP2+= 1;
+                pointsP2Element.innerHTML = pointsP2;
+            }
+          }
+
+          function startGame() {
+            currentPlayer = Math.random() < 0.5 ? 'p1' : 'p2';
+
+            currentPlayerPanel.style.display = "block";
+            pointsPanel.style.display = "block";
+            updateCurrentPlayer();
+
+            createBoard();
+          }
+
+          function endGame() {
+            if (document.querySelectorAll('.card[data-clicked="false"]').length === 0) {
+              let wonPlayer = "DRAW";
+              if (pointsP1 > pointsP2)
+                wonPlayer = "Player 1";
+              else if (pointsP2 > pointsP1)
+                wonPlayer = "Player 2";
+
+              alert('Congratulations! ' + wonPlayer + ' won!');
+            }
+        }
+    
+          function createBoard() {
+            cards.forEach((card, index) => {
+              const cardElement = document.createElement('div');
+              cardElement.classList.add('card');
+              cardElement.dataset.index = index;
+              cardElement.dataset.clicked = false;
+              cardElement.textContent = '?';
+              cardElement.addEventListener('click', flipCard);
+              memoryBoard.appendChild(cardElement);
+            });
+          }
+    
+          function flipCard() {
+            const selectedCard = this;
+            const index = selectedCard.dataset.index;
+            const clicked = selectedCard.dataset.clicked;
+
+            if (clicked == true)
+                return;
+
+            if (flippedIndexes.length < 2 && !flippedIndexes.includes(index)) {
+              flippedCards.push(cards[index]);
+              flippedIndexes.push(index);
+    
+              selectedCard.textContent = cards[index];
+              selectedCard.classList.add(currentPlayer);
+    
+              if (flippedIndexes.length === 2) {
+                setTimeout(checkMatch, 500);
+              }
+            }
+          }
+    
+          function checkMatch() {
+            const [index1, index2] = flippedIndexes;
+            const [card1, card2] = flippedCards;
+
+            let gotPoint = false;
+    
+            if (card1 === card2) {
+              flippedIndexes.forEach(index => {
+                const matchedCard = document.querySelector(`[data-index="${index}"]`);
+                matchedCard.dataset.clicked = true;
+              });
+              gotPoint = true;
+              updatePlayerPoints();
+            } else {
+              flippedIndexes.forEach(index => {
+                const flippedCard = document.querySelector(`[data-index="${index}"]`);
+                flippedCard.textContent = '?';
+
+                if (flippedCard.classList.contains("p1"))
+                    flippedCard.classList.remove("p1");
+
+                if (flippedCard.classList.contains("p2"))
+                    flippedCard.classList.remove("p2");
+
+              });
+            }
+    
+            flippedCards = [];
+            flippedIndexes = [];
+
+            if (!gotPoint) {
+                if (currentPlayer == "p1") currentPlayer = "p2";
+                else currentPlayer = "p1";
+                updateCurrentPlayer();
+            }
+
+            endGame();
+
+          }
+    
+      </script>
+      
+</html>

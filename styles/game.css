@@ -1,0 +1,133 @@
+#content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+#top_panel {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#top_panel button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.button_single {
+    background: #2DC244;
+}
+
+.button_single:hover {
+    background: #31D149;
+}
+
+.button_multi {
+    background: #C22D86;
+}
+
+.button_multi:hover {
+    background: #D13190;
+}
+
+#mode_panel {
+    display: block;
+}
+
+#difficulty_panel {
+    display: none;
+}
+
+.difficulty_1 {
+    background: #24E014;
+}
+
+.difficulty_2 {
+    background: #E09B14;
+}
+
+.difficulty_3 {
+    background: #E01414;
+}
+
+
+#current_player_panel {
+    display: none;
+    margin-bottom: 20px;
+}
+
+#current_player_panel h2 {
+    margin-bottom: 5px;
+}
+
+#current_player_info {
+    text-align: center;
+}
+
+
+#points_panel {
+    position: relative;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    margin-top: 20px;
+    display: none;
+}
+
+.points_content {
+    position: relative;
+    width: 48%;
+    text-align: center;
+    display: inline-block;
+}
+
+.points_content p {
+    margin-bottom: 4px;
+}
+
+.p1 {
+    color: #2DC244;
+}
+
+.p2 {
+    color: #C22D86;
+}
+
+
+#memory-board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    gap: 10px;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.card.p1 {
+    background: #2DC244;
+}
+
+.card.p2 {
+    background: #C22D86;
+}

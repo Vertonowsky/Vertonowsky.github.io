@@ -60,6 +60,8 @@
 
     <script>
 
+          let movesHistory = [];
+          let allFound = [];
           const initialCards = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
 
           // Double the letters
@@ -95,12 +97,13 @@
             modePanel.style.display = "none";
 
             if (mode == 'single') {
-                gameMode = 'single';
+                this.gameMode = 'single';
                 difficultyPanel.style.display = "block";
                 return;
             }
 
             if (mode == 'multi') {
+                this.gameMode = 'multi';
                 startGame();
                 return;
             }
@@ -128,7 +131,11 @@
           }
 
           function startGame() {
-            currentPlayer = Math.random() < 0.5 ? 'p1' : 'p2';
+            if (this.gameMode == 'single')
+                currentPlayer = 'p1';
+
+            if (this.gameMode == 'multi')
+                currentPlayer = Math.random() < 0.5 ? 'p1' : 'p2';
 
             currentPlayerPanel.style.display = "block";
             pointsPanel.style.display = "block";
@@ -160,6 +167,20 @@
               memoryBoard.appendChild(cardElement);
             });
           }
+
+          function addToHistory(card) {
+            const index = card.dataset.index;
+            const newCard = { index, letter: cards[index] };
+            movesHistory.push(newCard);
+
+            // Delete the oldest move
+            if (movesHistory.length > 10) 
+                movesHistory.shift();
+
+            // Add card to ever found
+            if (!allFound.some(move => move.index === index)) 
+                allFound.push(newCard);
+          }
     
           function flipCard() {
             const selectedCard = this;
@@ -169,6 +190,8 @@
             if (clicked == true)
                 return;
 
+            addToHistory(selectedCard);
+
             if (flippedIndexes.length < 2 && !flippedIndexes.includes(index)) {
               flippedCards.push(cards[index]);
               flippedIndexes.push(index);
@@ -177,7 +200,7 @@
               selectedCard.classList.add(currentPlayer);
     
               if (flippedIndexes.length === 2) {
-                setTimeout(checkMatch, 500);
+                setTimeout(checkMatch, 700);
               }
             }
           }
@@ -218,8 +241,54 @@
                 updateCurrentPlayer();
             }
 
+            if (this.gameMode == 'single' && currentPlayer == 'p2')
+                makeBotMove();
+            
             endGame();
+          }
 
+          function click2RandomElements() {
+            const unclickedCards = document.querySelectorAll('.card[data-clicked="false"]');
+            const randomIndex1 = Math.floor(Math.random() * unclickedCards.length);
+            let randomIndex2 = Math.floor(Math.random() * unclickedCards.length);
+
+            // Zapewnij, aby randomIndex2 był inny niż randomIndex1
+            while (randomIndex2 === randomIndex1) {
+                randomIndex2 = Math.floor(Math.random() * unclickedCards.length);
+            }
+
+            // Kliknij wybrane karty
+            unclickedCards[randomIndex1].click();
+            unclickedCards[randomIndex2].click();
+          }
+
+          function makeBotMove() {
+            console.log(this.gameDifficulty);
+            if (this.gameDifficulty == 1) {
+                click2RandomElements();
+                return;
+            }
+
+            if (this.gameDifficulty == 2) {
+                const unclickedCards = document.querySelectorAll('.card[data-clicked="false"]');
+
+  const unclickedCardsArray = Array.from(unclickedCards);
+
+  // Sprawdź historię ruchów
+  for (let i = movesHistory.length - 1; i >= 0; i--) {
+    const move = movesHistory[i];
+    const matchingCard = unclickedCardsArray.find(card => cards[parseInt(card.dataset.index)] === move.letter);
+
+    if (matchingCard) {
+      // Znaleziono pasującą parę w historii, kliknij obie karty
+      unclickedCardsArray[randomIndex1].click();
+      matchingCard.click();
+      return;
+    }
+  }
+
+                click2RandomElements();
+            }
           }
     
       </script>

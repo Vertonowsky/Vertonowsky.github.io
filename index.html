@@ -8,6 +8,8 @@
         <link rel="stylesheet" type="text/css" href="styles/index.css">
         <link rel="stylesheet" type="text/css" href="styles/header.css">
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     </head>
 
     <body>
@@ -16,7 +18,9 @@
 
             <div id="header">
 
-                <h2> Placeholder na header </h2>
+                <a> About </a>
+                <a> Projects </a>
+                <a> Contact </a>
 
             </div>
 
@@ -38,36 +42,17 @@
                         <p class="subtitle">a backend<br>developer</p>
 
                         <div id="linkers">
-                            <div class="title_with_shadow">
-                                <div class="tit_bck"></div>
-                                <p class="tit_text">Contact me here</p>
-                            </div>
-
-                            <a href="https://www.linkedin.com/in/b-malec/" class="social_link">Linkedin</a>
+                            <a href="https://www.linkedin.com/in/b-malec/" class="social_link"><i class="fa-brands fa-linkedin"></i></a>
                             <div class="dot"></div>
-                            <a href="https://github.com/Vertonowsky" class="social_link">GitHub</a>
+                            <a href="https://github.com/Vertonowsky" class="social_link"><i class="fa-brands fa-github"></i></a>
                             <div class="dot"></div>
-                            <a href = "mailto:bartosz.malec@onet.pl" class="social_link">Email</a>
+                            <a href="mailto:bartosz.malec@onet.pl" class="social_link"><i class="fa-solid fa-envelope"></i></a>
                         </div>
 
                     </div>
 
                     <div id="banner_image">
-                        <div id="banner_bck">
-
-                            <div id="square_bottom_left"></div>
-                            <div id="squares_top_right">
-                                <div class="square_right"></div>
-                                <div class="square_right"></div>
-                                <div class="square_right"></div>
-                                <div class="square_right"></div>
-                                <div class="square_right"></div>
-                            </div>
-
-                        </div>
-
                         <img alt="Profile picture" src="images/profilePicture.jpg">
-
                     </div>
                 </div>
 
@@ -79,6 +64,67 @@
                     </div>
                 </div>
             </div>
+
+            <div id="section_1">
+
+                <div class="image_carousel">
+
+                    <input type="radio" name="slider" id="item-1" checked>
+                    <input type="radio" name="slider" id="item-2">
+                    <input type="radio" name="slider" id="item-3">
+                    <div class="cards">
+                        <label class="card" for="item-1" id="song-1">
+                            <img src="https://images.unsplash.com/photo-1530651788726-1dbf58eeef1f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=882&q=80" alt="song">
+                        </label>
+                        <label class="card" for="item-2" id="song-2">
+                            <img src="https://images.unsplash.com/photo-1559386484-97dfc0e15539?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80" alt="song">
+                        </label>
+                        <label class="card" for="item-3" id="song-3">
+                            <img src="https://images.unsplash.com/photo-1533461502717-83546f485d24?ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="song">
+                        </label>
+                    </div>
+                    <div class="player">
+                        <div class="upper-part">
+                            <div class="play-icon">
+                                <svg width="20" height="20" fill="#2992dc" stroke="#2992dc" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-play" viewBox="0 0 24 24">
+                                    <defs/>
+                                    <path d="M5 3l14 9-14 9V3z"/>
+                                </svg>
+                            </div>
+                            <div class="info-area" id="test">
+                                <label class="song-info" id="song-info-1">
+                                    <div class="title">Bunker</div>
+                                    <div class="sub-line">
+                                        <div class="subtitle">Balthazar</div>
+                                        <div class="time">4.05</div>
+                                    </div>
+                                </label>
+                                <label class="song-info" id="song-info-2">
+                                    <div class="title">Words Remain</div>
+                                    <div class="sub-line">
+                                        <div class="subtitle">Moderator</div>
+                                        <div class="time">4.05</div>
+                                    </div>
+                                </label>
+                                <label class="song-info" id="song-info-3">
+                                    <div class="title">Falling Out</div>
+                                    <div class="sub-line">
+                                        <div class="subtitle">Otzeki</div>
+                                        <div class="time">4.05</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="progress-bar">
+                            <span class="progress"></span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
         </div>
 
     </body>

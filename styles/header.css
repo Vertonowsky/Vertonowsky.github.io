@@ -1,6 +1,9 @@
 #header {
     position: fixed;
     box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     top: 0;
     left: 0;
     right: 0;
@@ -8,18 +11,15 @@
     height: 70px;
     text-align: center;
     background: transparent;
+    padding: 14px 45px 12px 0;
+    gap: 30px;
     transition: all 0.4s;
     z-index: 3;
-    padding: 14px 0 12px 0;
 }
 
-#header h2 {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 30px;
-    margin: 0;
-    font-size: 18px;
+#header a {
+    position: relative;
+    font-size: 15px;
     font-weight: bold;
     color: #D0D0D0;
     text-transform: uppercase;

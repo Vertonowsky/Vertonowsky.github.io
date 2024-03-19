@@ -1,7 +1,11 @@
 :root {
     --color-blue: #2BA8D6;
-    --color-default: #666666;
     --color-title: #595959;
+
+    --color-default: #C5C6C6;
+    --color-gray: #808287;
+    --color-gold: #B2A171;
+
 
     --font-size-big: 22px;
     --font-size-title: 17px;

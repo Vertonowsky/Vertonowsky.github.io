@@ -8,7 +8,8 @@
         <link rel="stylesheet" type="text/css" href="styles/index.css">
         <link rel="stylesheet" type="text/css" href="styles/header.css">
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     </head>
 
@@ -28,7 +29,6 @@
                 START banner
             -->
             <div id="banner">
-
                 <div class="inner">
 
                     <div id="about">
@@ -67,65 +67,205 @@
 
             <div id="section_1">
 
-                <div class="image_carousel">
+                <h2 class="title">My projects</h2>
 
-                    <input type="radio" name="slider" id="item-1" checked>
-                    <input type="radio" name="slider" id="item-2">
-                    <input type="radio" name="slider" id="item-3">
-                    <div class="cards">
-                        <label class="card" for="item-1" id="song-1">
-                            <img src="https://images.unsplash.com/photo-1530651788726-1dbf58eeef1f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=882&q=80" alt="song">
-                        </label>
-                        <label class="card" for="item-2" id="song-2">
-                            <img src="https://images.unsplash.com/photo-1559386484-97dfc0e15539?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80" alt="song">
-                        </label>
-                        <label class="card" for="item-3" id="song-3">
-                            <img src="https://images.unsplash.com/photo-1533461502717-83546f485d24?ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="song">
-                        </label>
+                <div class="cards">
+                    <label class="card previous" onclick="openProject(this)" data-index="0">
+                        <img src="images/project_1.png" alt="song">
+                    </label>
+                    <label class="card active" onclick="openProject(this)" data-index="1">
+                        <img src="images/project_2.png" alt="song">
+                    </label>
+                    <label class="card next" onclick="openProject(this)" data-index="2">
+                        <img src="images/project_3.png" alt="song">
+                    </label>
+                </div>
+                <div class="card_details">
+
+                    <div class="horizontal_line"></div>
+                    <p class="project_title">Leds-Controller</p>
+                    <p class="project_description">LED strip management application designed for every lover of LED lights. Mount led strip to the side of your desk and change animations using online website running on external arduino WiFi module.</p>
+
+                    <p class="heading">Technologies used:</p>
+                    <div class="tech_container">
+                        <span class="tech">JavaScript</span>
+                        <span class="tech">HTML</span>
+                        <span class="tech">CSS</span>
+                        <span class="tech">C++</span>
+                        <span class="tech">Arduino</span>
                     </div>
-                    <div class="player">
-                        <div class="upper-part">
-                            <div class="play-icon">
-                                <svg width="20" height="20" fill="#2992dc" stroke="#2992dc" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-play" viewBox="0 0 24 24">
-                                    <defs/>
-                                    <path d="M5 3l14 9-14 9V3z"/>
-                                </svg>
-                            </div>
-                            <div class="info-area" id="test">
-                                <label class="song-info" id="song-info-1">
-                                    <div class="title">Bunker</div>
-                                    <div class="sub-line">
-                                        <div class="subtitle">Balthazar</div>
-                                        <div class="time">4.05</div>
-                                    </div>
-                                </label>
-                                <label class="song-info" id="song-info-2">
-                                    <div class="title">Words Remain</div>
-                                    <div class="sub-line">
-                                        <div class="subtitle">Moderator</div>
-                                        <div class="time">4.05</div>
-                                    </div>
-                                </label>
-                                <label class="song-info" id="song-info-3">
-                                    <div class="title">Falling Out</div>
-                                    <div class="sub-line">
-                                        <div class="subtitle">Otzeki</div>
-                                        <div class="time">4.05</div>
-                                    </div>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="progress-bar">
-                            <span class="progress"></span>
-                        </div>
+
+                    <div class="buttons">
+                        <a href="https://github.com/Vertonowsky/Leds-Controller" target="_blank"><i class="fa-brands fa-github"></i> Source code</a>
+<!--                        <a href="" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live demo</a>-->
+                    </div>
+
+                </div>
+
+
+
+
+
+
+                <div class="card_details active">
+
+                    <div class="horizontal_line"></div>
+                    <p class="project_title">Online-Courses</p>
+                    <p class="project_description">Simple online courses application offering a wide range of online courses for students. It's main responsibility is to allow easy configuration management and clarity of the GUI.</p>
+
+                    <p class="heading">Technologies used:</p>
+                    <div class="tech_container">
+                        <span class="tech">Java</span>
+                        <span class="tech">Spring</span>
+                        <span class="tech">Hibernate</span>
+                        <span class="tech">JPA</span>
+                        <span class="tech">Thymeleaf</span>
+                        <span class="tech">Git</span>
+                        <span class="tech">MySQL</span>
+                        <span class="tech">OAuth 2.0</span>
+                        <span class="tech">HTML</span>
+                        <span class="tech">CSS</span>
+                        <span class="tech">JavaScript</span>
+                    </div>
+
+                    <div class="buttons">
+                        <a href="https://github.com/Vertonowsky/Online-Courses" target="_blank"><i class="fa-brands fa-github"></i> Source code</a>
+<!--                        <a href="" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live demo</a>-->
+                    </div>
+
+                </div>
+
+                <div class="card_details">
+
+                    <div class="horizontal_line"></div>
+                    <p class="project_title">Admin Management Panel</p>
+                    <p class="project_description">Simple online courses application offering a wide range of online courses for students. It's main responsibility is to allow easy configuration management and clarity of the GUI.</p>
+
+                    <p class="heading">Technologies used:</p>
+                    <div class="tech_container">
+                        <span class="tech">Java</span>
+                        <span class="tech">Spring</span>
+                        <span class="tech">Hibernate</span>
+                        <span class="tech">JPA</span>
+                        <span class="tech">Thymeleaf</span>
+                        <span class="tech">Git</span>
+                        <span class="tech">PostgreSQL</span>
+                        <span class="tech">OAuth 2.0</span>
+                        <span class="tech">HTML</span>
+                        <span class="tech">CSS</span>
+                        <span class="tech">JavaScript</span>
+                        <span class="tech">TypeScript</span>
+                        <span class="tech">Next.js</span>
+                        <span class="tech">React</span>
+                    </div>
+
+                    <div class="buttons">
+                        <a href="https://github.com/Vertonowsky/admin-panel-frontend" target="_blank"><i class="fa-brands fa-github"></i> Source code (frontend)</a>
+                        <a href="https://github.com/Vertonowsky/admin-panel-backend" target="_blank"><i class="fa-brands fa-github"></i> Source code (backend)</a>
+<!--                        <a href="" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live demo</a>-->
                     </div>
 
                 </div>
 
             </div>
 
-
         </div>
+
+    <script>
+
+
+        const header = document.getElementById("header");
+
+
+        window.onscroll = function () {
+            if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40)
+                header.classList.add("active");
+            else
+                header.classList.remove("active");
+        };
+
+
+        window.onload = function () {
+            if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40)
+                header.classList.add("active");
+            else
+                header.classList.remove("active");
+        };
+
+
+
+        const cards = document.getElementsByClassName("card");
+        const details = document.getElementsByClassName("card_details");
+
+        function openProject(element) {
+            if (element.classList.contains("active"))
+                return;
+
+            if (element.classList.contains("next"))
+                moveToLeft();
+            else
+                moveToRight();
+
+
+            const index = element.dataset.index;
+            for (let i=0; i < details.length; i++) {
+                if (index === i)
+                    continue;
+
+                details[i].classList.remove("active");
+            }
+
+            details[index].classList.add("active");
+        }
+
+        function moveToLeft() {
+            for (let i = 0; i < cards.length; i++) {
+                const card = cards[i];
+
+                if (card.classList.contains("active")) {
+                    card.classList.remove("active");
+                    card.classList.add("previous");
+                    continue;
+                }
+
+                if (card.classList.contains("previous")) {
+                    card.classList.remove("previous");
+                    card.classList.add("next");
+                    continue;
+                }
+
+                if (card.classList.contains("next")) {
+                    card.classList.remove("next");
+                    card.classList.add("active");
+                }
+            }
+        }
+
+
+        function moveToRight() {
+            for (let i = 0; i < cards.length; i++) {
+                const card = cards[i];
+
+                if (card.classList.contains("active")) {
+                    card.classList.remove("active");
+                    card.classList.add("next");
+                    continue;
+                }
+
+                if (card.classList.contains("previous")) {
+                    card.classList.remove("previous");
+                    card.classList.add("active");
+                    continue;
+                }
+
+                if (card.classList.contains("next")) {
+                    card.classList.remove("next");
+                    card.classList.add("previous");
+                }
+            }
+        }
+
+    </script>
 
     </body>
 

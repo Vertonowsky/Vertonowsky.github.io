@@ -21,7 +21,7 @@
     background: radial-gradient(circle, rgba(49,50,54,1) 0%, rgba(28,29,33,1) 50%);
 }
 
-    .inner {
+    #banner .inner {
         position: relative;
         width: 1400px;
         height: 100%;
@@ -102,7 +102,6 @@
                 position: relative;
                 font-size: 24px;
                 color: var(--color-default);
-                text-decoration: none;
                 transition: color 0.2s;
             }
 
@@ -185,7 +184,7 @@
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    padding: 60px 10px 30px 10px;
+    padding: 90px 10px 30px 10px;
     font-family: 'DM Sans', sans-serif;
     transition: background .4s ease-in;
 }
@@ -291,7 +290,6 @@
 
             .card_details a {
                 display: flex;
-                text-decoration: none;
                 align-items: center;
                 color: var(--color-gold);
                 border: 1px solid var(--color-gold);
@@ -368,7 +366,7 @@ body::-webkit-scrollbar-corner {
 
 @media (max-width: 1500px) {
 
-    .inner {
+    #banner .inner {
         width: 1150px;
     }
 
@@ -392,7 +390,7 @@ body::-webkit-scrollbar-corner {
 
 @media (max-width: 1280px) {
 
-    .inner {
+    #banner .inner {
         width: 1000px;
     }
 
@@ -420,7 +418,7 @@ body::-webkit-scrollbar-corner {
 
 @media (max-width: 1024px) {
 
-    .inner {
+    #banner .inner {
         width: 90%;
     }
 
@@ -458,7 +456,7 @@ body::-webkit-scrollbar-corner {
 
 @media (max-width: 768px) {
 
-    .inner {
+    #banner .inner {
         flex-direction: column;
         padding-top: 100px;
     }

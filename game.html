@@ -7,6 +7,8 @@
 		<link rel="stylesheet" type="text/css" href="styles/main.css">
 		<link rel="stylesheet" type="text/css" href="styles/game.css">
 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	</head>
 
 	<body>
@@ -15,7 +17,7 @@
 
 			<div id="top_panel">
 
-				<h1 class="title">Memory</h1>
+				<h1>Memory</h1>
 
 				<div id="mode_panel">
 					<h2>Choose game mode:</h2>
@@ -59,7 +61,7 @@
 
 	<script>
 
-        const initialCards = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'Z', 'U'];
+        const initialCards = ['&#9910', '&#9835', '&#9969', '&#9935', '&#9976', '&#9822', '&#9927', '&#9776', '&#9775', '&#9752'];
         const cards = [...initialCards, ...initialCards];
 
 		let movesHistory = [];
@@ -220,11 +222,15 @@
                 flippedCards.push(cards[index]);
                 flippedIndexes.push(index);
 
-                selectedCard.textContent = cards[index];
+                selectedCard.innerHTML = cards[index];
                 selectedCard.classList.add(currentPlayer);
 
-                if (flippedIndexes.length === 2)
-                    setTimeout(checkMatch, 700);
+                if (flippedIndexes.length === 2) {
+					if (gameMode === 'single' && currentPlayer === 'p1') {
+						setTimeout(checkMatch, 800);
+					} else
+						setTimeout(checkMatch, 1100);
+				}
             }
         }
 

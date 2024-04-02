@@ -106,17 +106,15 @@
                 #social .social_media {
                     position: relative;
                     box-sizing: border-box;
-                    color: #CFCFCF;
                     margin: 0;
                     text-align: center;
                     cursor: pointer;
-                    transition: all 0.3s;
                 }
 
 
-                #social .social_media i {
-                    font-size: 30px;
-                    transition: background 0.3s;
+                #social .social_media img {
+                    width: 24px;
+                    height: 24px;
                 }
 
 
@@ -124,9 +122,6 @@
                     margin-right: 12px;
                 }
 
-                #social .social_media:hover {
-                    color: #fff;
-                }
 
 
 

@@ -372,28 +372,28 @@
 
 
 
-body::-webkit-scrollbar {
-    background: #34363D;
-    width: 10px;
-    height: 10px;
-}
+/*body::-webkit-scrollbar {*/
+/*    background: #34363D;*/
+/*    width: 10px;*/
+/*    height: 10px;*/
+/*}*/
 
-body::-webkit-scrollbar-track {
-    display: none;
-}
+/*body::-webkit-scrollbar-track {*/
+/*    display: none;*/
+/*}*/
 
-body::-webkit-scrollbar-thumb {
-    background-color: #6D7180;
-    border-radius: 6px;
-}
+/*body::-webkit-scrollbar-thumb {*/
+/*    background-color: #6D7180;*/
+/*    border-radius: 6px;*/
+/*}*/
 
-body::-webkit-scrollbar-thumb:hover {
-    background: #7A7E8F;
-}
+/*body::-webkit-scrollbar-thumb:hover {*/
+/*    background: #7A7E8F;*/
+/*}*/
 
-body::-webkit-scrollbar-corner {
-    background: transparent;
-}
+/*body::-webkit-scrollbar-corner {*/
+/*    background: transparent;*/
+/*}*/
 
 
 

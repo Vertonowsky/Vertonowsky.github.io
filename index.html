@@ -180,10 +180,9 @@
 
 
 			<div id="section_2">
-				<div class="inner">
-
-                    <div class="project_container active">
-                        <div class="project_details">
+				<div class="inner section_2_inner">
+                    <div class="details_container">
+                        <div class="project_details active">
                             <div class="horizontal_line"></div>
                             <p class="project_title">Online-Courses</p>
                             <p class="project_description">Simple online courses application offering a wide range of online courses for students. It's main responsibility is to allow easy configuration management and clarity of the GUI.</p>
@@ -205,18 +204,11 @@
 
                             <div class="buttons">
                                 <a href="https://github.com/Vertonowsky/Online-Courses" target="_blank"><img src="/images/github-logo.png" alt="github"> Source code</a>
-                                <!--                        <a href="" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live demo</a>-->
+<!--                                <a href="" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live demo</a>-->
                             </div>
-
                         </div>
 
-                        <div class="project_img">
-                            <img src="images/project_1_1.png" alt="Online courses main page">
-                        </div>
 
-                    </div>
-
-                    <div class="project_container">
                         <div class="project_details">
                             <div class="horizontal_line"></div>
                             <p class="project_title">Leds-Controller</p>
@@ -235,25 +227,83 @@
                                 <a href="https://github.com/Vertonowsky/Leds-Controller" target="_blank"><img src="/images/github-logo.png" alt="github"> Source code</a>
                                 <!--                        <a href="" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live demo</a>-->
                             </div>
-
                         </div>
 
-                        <div class="project_img slideOutAnimation">
-                            <img src="images/project_2_1.png" alt="Leds controller main page">
+                        <div class="project_details">
+                            <div class="horizontal_line"></div>
+                            <p class="project_title">Admin Management Panel</p>
+                            <p class="project_description">Content Management application allowing company owners to effectively manage work time of their employees. Basically it's a advanced calendar with multiple features like calculating needed resources for upcoming month and many others!</p>
+
+                            <p class="heading">Technologies used:</p>
+                            <div class="tech_container">
+                                <span class="tech">Java</span>
+                                <span class="tech">Spring</span>
+                                <span class="tech">Hibernate</span>
+                                <span class="tech">JPA</span>
+                                <span class="tech">Thymeleaf</span>
+                                <span class="tech">Git</span>
+                                <span class="tech">PostgreSQL</span>
+                                <span class="tech">OAuth 2.0</span>
+                                <span class="tech">HTML</span>
+                                <span class="tech">CSS</span>
+                                <span class="tech">JavaScript</span>
+                                <span class="tech">TypeScript</span>
+                                <span class="tech">Next.js</span>
+                                <span class="tech">React</span>
+                            </div>
+
+                            <div class="buttons">
+                                <a href="https://github.com/Vertonowsky/admin-panel-frontend" target="_blank"><img src="/images/github-logo.png" alt="github"> Source code (frontend)</a>
+                                <a href="https://github.com/Vertonowsky/admin-panel-backend" target="_blank"><img src="/images/github-logo.png" alt="github"> Source code (backend)</a>
+                                <!--                        <a href="" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live demo</a>-->
+                            </div>
                         </div>
+
+                        <div class="project_details">
+                            <div class="horizontal_line"></div>
+                            <p class="project_title">Lorem Ipsum</p>
+                            <p class="project_description">Lorem ipsum sumo de quanto Lorem ipsum sumo de quanto Lorem ipsum sumo de quanto Lorem ipsum sumo de quanto Lorem ipsum sumo de quanto Lorem ipsum sumo de quanto Lorem ipsum sumo de quanto</p>
+
+                            <p class="heading">Technologies used:</p>
+                            <div class="tech_container">
+                                <span class="tech">Java</span>
+                                <span class="tech">Spring</span>
+                                <span class="tech">Hibernate</span>
+                                <span class="tech">JPA</span>
+                                <span class="tech">Thymeleaf</span>
+                            </div>
+
+                            <div class="buttons">
+                                <a href="https://github.com/Vertonowsky/Online-Courses" target="_blank"><img src="/images/github-logo.png" alt="github"> Source code</a>
+                                <!--                                <a href="" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live demo</a>-->
+                            </div>
+                        </div>
+
                     </div>
 
 
-                    <div id="test">
-                        <i class="icon_next fa-solid fa-chevron-right"  onclick="nextSlide()"></i>
+                    <div class="project_images">
+                        <div class="project_img active" onclick="nextSlide()">
+                            <img src="images/project_1_1.png" alt="song">
+                        </div>
+                        <div class="project_img next" onclick="nextSlide()">
+                            <img src="images/project_2_1.png" alt="song">
+                        </div>
+                        <div class="project_img" onclick="nextSlide()">
+                            <img src="images/project_3_1.png" alt="song">
+                        </div>
+                        <div class="project_img" onclick="nextSlide()">
+                            <img src="images/project_4_1.png" alt="song">
+                        </div>
                     </div>
 
 				</div>
 
                 <div id="slider">
-                    <div class="slide" onclick="nextSlide()"></div>
-                    <div class="slide active" onclick="nextSlide()"></div>
-                    <div class="slide" onclick="nextSlide()"></div>
+                    <div class="slide active" onclick="specificSlide(1)"></div>
+                    <div class="slide" onclick="specificSlide(2)"></div>
+                    <div class="slide" onclick="specificSlide(3)"></div>
+                    <div class="slide" onclick="specificSlide(4)"></div>
                 </div>
 			</div>
 

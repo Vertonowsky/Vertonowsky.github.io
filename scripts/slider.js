@@ -98,13 +98,11 @@ function updateSlides(activeIndex) {
 	slidesArray[activeIndex].classList.add("active");
 }
 
-
-
 jQuery(document).ready(function($){
-	let $timeline_block = $('.section_2_inner');
+	let $timeline_block = $('.inner_section');
 	let $slider = $('#slider');
 	
-	if ($($timeline_block).offset().top > $(window).scrollTop()+$(window).height()*0.75) {
+	if ($($timeline_block).offset().top > $(window).scrollTop()+$(window).height()*0.9) {
 		$($timeline_block).addClass('is-hidden');
 		$($slider).addClass('is-hidden');
 	}
@@ -112,7 +110,7 @@ jQuery(document).ready(function($){
 	
 	$(window).on('scroll', function(){
 		
-		if($($timeline_block).offset().top <= $(window).scrollTop()+$(window).height()*0.75 && $($timeline_block).hasClass('is-hidden')) {
+		if($($timeline_block).offset().top <= $(window).scrollTop()+$(window).height()*0.9 && $($timeline_block).hasClass('is-hidden')) {
 			$($timeline_block).removeClass('is-hidden').addClass('slideBlob');
 			$($slider).removeClass('is-hidden').addClass('slideBlob');
 		}
@@ -121,6 +119,8 @@ jQuery(document).ready(function($){
 });
 
 
+
+const section1 = $("#section_1");
 
 const handleTouchStart = (evt) => {
 	const firstTouch = getTouches(evt)[0];
@@ -131,6 +131,9 @@ const handleTouchStart = (evt) => {
 const handleTouchMove = (evt) => {
 	if (!xDown || !yDown) return;
 	
+	if (!$('div#section_1').has(document.elementFromPoint(xDown, yDown)).length)
+		return;
+	
 	const xUp = evt.touches[0].clientX;
 	const yUp = evt.touches[0].clientY;
 	
@@ -139,7 +142,6 @@ const handleTouchMove = (evt) => {
 	
 	if (Math.abs(xDiff) > Math.abs(yDiff)) {
 		if (xDiff > 0) {
-			console.log("Right swipe detected!");
 			nextSlide();
 		} else {
 			previousSlide();

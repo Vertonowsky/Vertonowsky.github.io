@@ -457,6 +457,19 @@
 
 @media screen and (max-width: 780px) {
 
+    #section_1 {
+        padding-top: 40px;
+    }
+
+        #section_1 .inner_section {
+            padding-top: 0;
+        }
+
+        .title {
+            font-size: 20px;
+            margin: 20px 0;
+        }
+
     .project_title {
         font-size: var(--font-size-title);
     }
@@ -510,8 +523,13 @@
     }
 
     #slider {
-        width: 95%;
+        width: 96%;
+        gap: 7px;
     }
+
+        .slide {
+            height: 7px;
+        }
 
 }
 

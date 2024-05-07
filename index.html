@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title> Profil osobowy - Bartosz Malec </title>
+        <title> Bartosz Malec - Java backend developer</title>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel="stylesheet" type="text/css" href="styles/main.css">
         <link rel="stylesheet" type="text/css" href="styles/index.css">
         <link rel="stylesheet" type="text/css" href="styles/header.css">
+        <link rel="stylesheet" type="text/css" href="styles/timeline.css">
+        <link rel="stylesheet" type="text/css" href="styles/slider.css">
         <link rel="stylesheet" type="text/css" href="styles/footer.css">
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
     </head>
 
     <body>
@@ -65,106 +68,231 @@
                 </div>
             </div>
 
-            <div id="section_1">
+			<div id="section_1">
 
                 <h2 class="title">My projects</h2>
 
-                <div class="cards">
-                    <label class="card previous" onclick="openProject(this)" data-index="0">
-                        <img src="images/project_1.png" alt="song">
-                    </label>
-                    <label class="card active" onclick="openProject(this)" data-index="1">
-                        <img src="images/project_2.png" alt="song">
-                    </label>
-                    <label class="card next" onclick="openProject(this)" data-index="2">
-                        <img src="images/project_3.png" alt="song">
-                    </label>
+				<div class="inner_section">
+
+                    <div class="animated_arrows" onclick="nextSlide()">
+                        <i class="arrow fas fa-chevron-right"></i>
+                        <i class="arrow fas fa-chevron-right"></i>
+                    </div>
+
+                    <div class="details_container">
+                        <div class="project_details active">
+                            <div class="horizontal_line"></div>
+                            <p class="project_title">Online-Courses</p>
+                            <p class="project_description">Simple online courses application offering a wide range of online courses for students. It's main responsibility is to allow easy configuration management and clarity of the GUI.</p>
+
+                            <p class="heading">Technologies used:</p>
+                            <div class="tech_container">
+                                <span class="tech">Java</span>
+                                <span class="tech">Spring</span>
+                                <span class="tech">Hibernate</span>
+                                <span class="tech">JPA</span>
+                                <span class="tech">Thymeleaf</span>
+                                <span class="tech">Git</span>
+                                <span class="tech">MySQL</span>
+                                <span class="tech">OAuth 2.0</span>
+                                <span class="tech">HTML</span>
+                                <span class="tech">CSS</span>
+                                <span class="tech">JavaScript</span>
+                            </div>
+
+                            <div class="buttons">
+                                <a href="https://github.com/Vertonowsky/Online-Courses" target="_blank"><img src="/images/github-logo.png" alt="github"> Source code</a>
+<!--                                <a href="" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live demo</a>-->
+                            </div>
+                        </div>
+
+
+                        <div class="project_details">
+                            <div class="horizontal_line"></div>
+                            <p class="project_title">Leds-Controller</p>
+                            <p class="project_description">LED strip management application designed for every lover of LED lights. Mount led strip to the side of your desk and change animations using online website running on external arduino WiFi module.</p>
+
+                            <p class="heading">Technologies used:</p>
+                            <div class="tech_container">
+                                <span class="tech">JavaScript</span>
+                                <span class="tech">HTML</span>
+                                <span class="tech">CSS</span>
+                                <span class="tech">C++</span>
+                                <span class="tech">Arduino</span>
+                            </div>
+
+                            <div class="buttons">
+                                <a href="https://github.com/Vertonowsky/Leds-Controller" target="_blank"><img src="/images/github-logo.png" alt="github"> Source code</a>
+                                <!--                        <a href="" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live demo</a>-->
+                            </div>
+                        </div>
+
+                        <div class="project_details">
+                            <div class="horizontal_line"></div>
+                            <p class="project_title">Admin Management Panel</p>
+                            <p class="project_description">Content Management application allowing company owners to effectively manage work time of their employees. Basically it's a advanced calendar with multiple features like calculating needed resources for upcoming month and many others!</p>
+
+                            <p class="heading">Technologies used:</p>
+                            <div class="tech_container">
+                                <span class="tech">Java</span>
+                                <span class="tech">Spring</span>
+                                <span class="tech">Hibernate</span>
+                                <span class="tech">JPA</span>
+                                <span class="tech">Thymeleaf</span>
+                                <span class="tech">Git</span>
+                                <span class="tech">PostgreSQL</span>
+                                <span class="tech">OAuth 2.0</span>
+                                <span class="tech">HTML</span>
+                                <span class="tech">CSS</span>
+                                <span class="tech">JavaScript</span>
+                                <span class="tech">TypeScript</span>
+                                <span class="tech">Next.js</span>
+                                <span class="tech">React</span>
+                            </div>
+
+                            <div class="buttons">
+                                <a href="https://github.com/Vertonowsky/admin-panel-frontend" target="_blank"><img src="/images/github-logo.png" alt="github"> Frontend - React</a>
+                                <a href="https://github.com/Vertonowsky/admin-panel-backend" target="_blank"><img src="/images/github-logo.png" alt="github"> Backend - Spring</a>
+                                <!--                        <a href="" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live demo</a>-->
+                            </div>
+                        </div>
+
+                        <div class="project_details">
+                            <div class="horizontal_line"></div>
+                            <p class="project_title">Lorem Ipsum</p>
+                            <p class="project_description">Lorem ipsum sumo de quanto Lorem ipsum sumo de quanto Lorem ipsum sumo de quanto Lorem ipsum sumo de quanto Lorem ipsum sumo de quanto Lorem ipsum sumo de quanto Lorem ipsum sumo de quanto</p>
+
+                            <p class="heading">Technologies used:</p>
+                            <div class="tech_container">
+                                <span class="tech">Java</span>
+                                <span class="tech">Spring</span>
+                                <span class="tech">Hibernate</span>
+                                <span class="tech">JPA</span>
+                                <span class="tech">Thymeleaf</span>
+                            </div>
+
+                            <div class="buttons">
+                                <a href="https://github.com/Vertonowsky/Online-Courses" target="_blank"><img src="/images/github-logo.png" alt="github"> Source code</a>
+                                <!--                                <a href="" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live demo</a>-->
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="project_images">
+                        <div class="project_img active" onclick="nextSlide()">
+                            <img src="images/project_1_1.png" alt="song">
+                        </div>
+                        <div class="project_img next" onclick="nextSlide()">
+                            <img src="images/project_2_1.png" alt="song">
+                        </div>
+                        <div class="project_img" onclick="nextSlide()">
+                            <img src="images/project_3_1.png" alt="song">
+                        </div>
+                        <div class="project_img" onclick="nextSlide()">
+                            <img src="images/project_4_1.png" alt="song">
+                        </div>
+                    </div>
+
+				</div>
+
+                <div id="slider">
+                    <div class="slide active" onclick="specificSlide(1)"></div>
+                    <div class="slide" onclick="specificSlide(2)"></div>
+                    <div class="slide" onclick="specificSlide(3)"></div>
+                    <div class="slide" onclick="specificSlide(4)"></div>
                 </div>
-                <div class="card_details">
+			</div>
 
-                    <div class="horizontal_line"></div>
-                    <p class="project_title">Leds-Controller</p>
-                    <p class="project_description">LED strip management application designed for every lover of LED lights. Mount led strip to the side of your desk and change animations using online website running on external arduino WiFi module.</p>
 
-                    <p class="heading">Technologies used:</p>
-                    <div class="tech_container">
-                        <span class="tech">JavaScript</span>
-                        <span class="tech">HTML</span>
-                        <span class="tech">CSS</span>
-                        <span class="tech">C++</span>
-                        <span class="tech">Arduino</span>
+
+            <div id="timeline">
+                <div class="timeline-block">
+                    <div class="timeline-img">
+                        <div class="pulse"></div>
+                        <div class="pulse pulse-delay"></div>
+                        <div class="overlay"></div>
+                        <img src="images/java.png" alt="Java">
                     </div>
 
-                    <div class="buttons">
-                        <a href="https://github.com/Vertonowsky/Leds-Controller" target="_blank"><img src="/images/github-logo.png" alt="github"> Source code</a>
-<!--                        <a href="" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live demo</a>-->
+                    <div class="timeline-content">
+                        <h2>Java backend developer [Spring, JavaEE]</h2>
+                        <ul>
+                            <li>I am being a part of a backend team developing player.pl media software</li>
+                            <li>I take part in developing the PostgreSQL database using sql queries</li>
+                            <li>I am responsible for building production packages, code review, keeping documentation up to date, writing clean code</li>
+                        </ul>
+                        <div class="date">
+                            <h2>2023 - now </h2>
+                            <p><b>Redge Technologies</b>, <span class="position">Junior Java Developer</span></p>
+                        </div>
                     </div>
-
                 </div>
 
-
-
-
-
-
-                <div class="card_details active">
-
-                    <div class="horizontal_line"></div>
-                    <p class="project_title">Online-Courses</p>
-                    <p class="project_description">Simple online courses application offering a wide range of online courses for students. It's main responsibility is to allow easy configuration management and clarity of the GUI.</p>
-
-                    <p class="heading">Technologies used:</p>
-                    <div class="tech_container">
-                        <span class="tech">Java</span>
-                        <span class="tech">Spring</span>
-                        <span class="tech">Hibernate</span>
-                        <span class="tech">JPA</span>
-                        <span class="tech">Thymeleaf</span>
-                        <span class="tech">Git</span>
-                        <span class="tech">MySQL</span>
-                        <span class="tech">OAuth 2.0</span>
-                        <span class="tech">HTML</span>
-                        <span class="tech">CSS</span>
-                        <span class="tech">JavaScript</span>
+                <div class="timeline-block">
+                    <div class="timeline-img">
+                        <div class="pulse"></div>
+                        <div class="pulse pulse-delay"></div>
+                        <div class="overlay"></div>
+                        <img src="images/c-sharp.png" alt="C sharp">
                     </div>
 
-                    <div class="buttons">
-                        <a href="https://github.com/Vertonowsky/Online-Courses" target="_blank"><img src="/images/github-logo.png" alt="github"> Source code</a>
-<!--                        <a href="" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live demo</a>-->
+                    <div class="timeline-content">
+                        <h2>C# backend developer [IBM]</h2>
+                        <ul>
+                            <li>Developed a computer application allowing users to download files from the cloud</li>
+                            <li>Implemented advanced download scripts using the IBM FileNet API</li>
+                        </ul>
+                        <div class="date">
+                            <h2>2022 - 2023</h2>
+                            <p><b>GAZ-SYSTEM</b>, <span class="position">Junior C# Developer</span></p>
+                        </div>
                     </div>
-
                 </div>
 
-                <div class="card_details">
-
-                    <div class="horizontal_line"></div>
-                    <p class="project_title">Admin Management Panel</p>
-                    <p class="project_description">Content Management application allowing company owners to effectively manage work time of their employees. Basically it's a advanced calendar with multiple features like calculating needed resources for upcoming month and many others!</p>
-
-                    <p class="heading">Technologies used:</p>
-                    <div class="tech_container">
-                        <span class="tech">Java</span>
-                        <span class="tech">Spring</span>
-                        <span class="tech">Hibernate</span>
-                        <span class="tech">JPA</span>
-                        <span class="tech">Thymeleaf</span>
-                        <span class="tech">Git</span>
-                        <span class="tech">PostgreSQL</span>
-                        <span class="tech">OAuth 2.0</span>
-                        <span class="tech">HTML</span>
-                        <span class="tech">CSS</span>
-                        <span class="tech">JavaScript</span>
-                        <span class="tech">TypeScript</span>
-                        <span class="tech">Next.js</span>
-                        <span class="tech">React</span>
+                <div class="timeline-block">
+                    <div class="timeline-img">
+                        <div class="pulse"></div>
+                        <div class="pulse pulse-delay"></div>
+                        <div class="overlay"></div>
+                        <img src="images/python.png" alt="Python">
                     </div>
 
-                    <div class="buttons">
-                        <a href="https://github.com/Vertonowsky/admin-panel-frontend" target="_blank"><img src="/images/github-logo.png" alt="github"> Source code (frontend)</a>
-                        <a href="https://github.com/Vertonowsky/admin-panel-backend" target="_blank"><img src="/images/github-logo.png" alt="github"> Source code (backend)</a>
-<!--                        <a href="" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live demo</a>-->
+                    <div class="timeline-content">
+                        <h2>Python backend developer [Flask]</h2>
+                        <ul>
+                            <li>Developed web application using Flask framework</li>
+                            <li>Performed unit tests and logged issues into the system</li>
+                            <li>Designed new layouts using Figma</li>
+                        </ul>
+                        <div class="date">
+                            <h2>July 2021</h2>
+                            <p><b>Euromind</b>, <span class="position">Erasmus+ Internship participant</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-block">
+                    <div class="timeline-img">
+                        <div class="pulse"></div>
+                        <div class="pulse pulse-delay"></div>
+                        <div class="overlay"></div>
+                        <img src="images/java.png" alt="Java">
                     </div>
 
+                    <div class="timeline-content">
+                        <h2>Programming coach [Java, LUA]</h2>
+                        <ul>
+                            <li>Leaded group programming classes for children aged between 7 and 12 years old</li>
+                            <li>Maintained and inspected computer hardware</li>
+                            <li>Developed Minecraft plugins using Java language and Bukkit API</li>
+                        </ul>
+                        <div class="date">
+                            <h2>2017 - 2020</h2>
+                            <p><b>Mindcloud</b>, <span class="position">Certified Mindcloud Coach</span></p>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -186,13 +314,15 @@
                             <a href="https://www.linkedin.com/in/bartosz-malec-a6a36418b/" target="_blank" class="social_media"><img src="/images/linkedin-logo.png" alt="linkedin"></a>
                             <a href="https://github.com/Vertonowsky" target="_blank" class="social_media"><img src="/images/github-logo.png" alt="github"></a>
                         </div>
-
                     </div>
                 </div>
 
             </div>
 
         </div>
+
+        <script src="scripts/timeline.js"></script>
+        <script src="scripts/slider.js" type="application/javascript"></script>
 
     <script>
 

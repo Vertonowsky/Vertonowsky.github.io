@@ -3,6 +3,7 @@
     width: 90%;
     max-width: 1170px;
     margin: 3em auto;
+    padding-bottom: 100px;
 }
 
 /* Vertical line */
@@ -116,7 +117,7 @@
     content: '';
     display: table;
     width: 45%;
-    border-radius: 0.25em;
+    border-radius: 12px;
     padding: 15px;
     box-shadow: 0 3px 0 #55575E;
     margin-left: 0;

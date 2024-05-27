@@ -3,7 +3,7 @@
 #footer {
     position: relative;
     width: 100%;
-    background: #222326;
+    background: #1C1E21;
     padding: 70px 0 35px 0;
     z-index: 3;
 }
@@ -24,7 +24,7 @@
             width: 80%;
             margin: auto;
             height: auto;
-            padding-bottom: 90px;
+            padding-bottom: 75px;
             font-size: 0;
         }
 

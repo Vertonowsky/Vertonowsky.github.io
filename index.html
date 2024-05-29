@@ -23,9 +23,14 @@
 
             <div id="header">
 
-                <a href="#banner"> Start </a>
-                <a href="#section_1"> Projects </a>
-                <a href="#footer"> Contact </a>
+                <div class="language-selector">
+                    <img src="images/en.png" alt="English" data-lang="en" class="flag">
+                    <img src="images/pl.png" alt="Polski" data-lang="pl" class="flag">
+                </div>
+                <a data-key="HeaderButtonStart" href="#banner"> </a>
+                <a data-key="HeaderButtonProjects" href="#section_1"> </a>
+                <a data-key="HeaderButtonExperience" href="#timeline"> </a>
+                <a data-key="HeaderButtonContact" href="#footer"> </a>
 
             </div>
 
@@ -38,12 +43,12 @@
                     <div id="about">
 
                         <div class="line">
-                            <span class="pretitle">hi im</span>
+                            <span data-key="WelcomeMessagePretitle" class="pretitle"> </span>
                             <div class="straight_line"></div>
                         </div>
 
                         <h1>Bartek</h1>
-                        <p class="subtitle">a backend<br>developer</p>
+                        <p data-key="WelcomeMessageTitle" class="subtitle"> </p>
 
                         <div id="linkers">
                             <a href="https://www.linkedin.com/in/b-malec/" class="social_link"><img src="/images/linkedin-logo.png" alt="linkedin"></a>
@@ -71,7 +76,7 @@
 
 			<div id="section_1">
 
-                <h2 class="title">My projects</h2>
+                <h2 data-key="TitleProjects" class="title"> </h2>
 
 				<div class="inner_section">
 
@@ -83,10 +88,10 @@
                     <div class="details_container">
                         <div class="project_details active">
                             <div class="horizontal_line"></div>
-                            <p class="project_title">Online-Courses</p>
-                            <p class="project_description">Simple online courses application offering a wide range of online courses for students. It's main responsibility is to allow easy configuration management and clarity of the GUI.</p>
+                            <p data-key="Project_1_title" class="project_title"></p>
+                            <p data-key="Project_1_description" class="project_description"> </p>
 
-                            <p class="heading">Technologies used:</p>
+                            <p data-key="TechnologiesUsed" class="heading"> </p>
                             <div class="tech_container">
                                 <span class="tech">Java</span>
                                 <span class="tech">Spring</span>
@@ -102,7 +107,7 @@
                             </div>
 
                             <div class="buttons">
-                                <a href="https://github.com/Vertonowsky/Online-Courses" target="_blank"><img src="/images/github-logo.png" alt="github"> Source code</a>
+                                <a href="https://github.com/Vertonowsky/Online-Courses" target="_blank"><img data-key="SourceCode" src="/images/github-logo.png" alt="github"/> Source code</a>
 <!--                                <a href="" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live demo</a>-->
                             </div>
                         </div>
@@ -110,10 +115,10 @@
 
                         <div class="project_details">
                             <div class="horizontal_line"></div>
-                            <p class="project_title">Leds-Controller</p>
-                            <p class="project_description">LED strip management application designed for every lover of LED lights. Mount led strip to the side of your desk and change animations using online website running on external arduino WiFi module.</p>
+                            <p data-key="Project_2_title" class="project_title"></p>
+                            <p data-key="Project_2_description" class="project_description"> </p>
 
-                            <p class="heading">Technologies used:</p>
+                            <p data-key="TechnologiesUsed" class="heading"> </p>
                             <div class="tech_container">
                                 <span class="tech">JavaScript</span>
                                 <span class="tech">HTML</span>
@@ -123,17 +128,17 @@
                             </div>
 
                             <div class="buttons">
-                                <a href="https://github.com/Vertonowsky/Leds-Controller" target="_blank"><img src="/images/github-logo.png" alt="github"> Source code</a>
+                                <a href="https://github.com/Vertonowsky/Leds-Controller" target="_blank"><img data-key="SourceCode" src="/images/github-logo.png" alt="github"> Source code</a>
                                 <!--                        <a href="" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live demo</a>-->
                             </div>
                         </div>
 
                         <div class="project_details">
                             <div class="horizontal_line"></div>
-                            <p class="project_title">Admin Management Panel</p>
-                            <p class="project_description">Content Management application allowing company owners to effectively manage work time of their employees. Basically it's a advanced calendar with multiple features like calculating needed resources for upcoming month and many others!</p>
+                            <p data-key="Project_3_title" class="project_title"></p>
+                            <p data-key="Project_3_description" class="project_description"> </p>
 
-                            <p class="heading">Technologies used:</p>
+                            <p data-key="TechnologiesUsed" class="heading"> </p>
                             <div class="tech_container">
                                 <span class="tech">Java</span>
                                 <span class="tech">Spring</span>
@@ -152,29 +157,9 @@
                             </div>
 
                             <div class="buttons">
-                                <a href="https://github.com/Vertonowsky/admin-panel-frontend" target="_blank"><img src="/images/github-logo.png" alt="github"> Frontend - React</a>
-                                <a href="https://github.com/Vertonowsky/admin-panel-backend" target="_blank"><img src="/images/github-logo.png" alt="github"> Backend - Spring</a>
+                                <a href="https://github.com/Vertonowsky/admin-panel-frontend" target="_blank"><img data-key="SourceCode" src="/images/github-logo.png" alt="github"> Frontend - React</a>
+                                <a href="https://github.com/Vertonowsky/admin-panel-backend" target="_blank"><img data-key="SourceCode" src="/images/github-logo.png" alt="github"> Backend - Spring</a>
                                 <!--                        <a href="" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live demo</a>-->
-                            </div>
-                        </div>
-
-                        <div class="project_details">
-                            <div class="horizontal_line"></div>
-                            <p class="project_title">Lorem Ipsum</p>
-                            <p class="project_description">Lorem ipsum sumo de quanto Lorem ipsum sumo de quanto Lorem ipsum sumo de quanto Lorem ipsum sumo de quanto Lorem ipsum sumo de quanto Lorem ipsum sumo de quanto Lorem ipsum sumo de quanto</p>
-
-                            <p class="heading">Technologies used:</p>
-                            <div class="tech_container">
-                                <span class="tech">Java</span>
-                                <span class="tech">Spring</span>
-                                <span class="tech">Hibernate</span>
-                                <span class="tech">JPA</span>
-                                <span class="tech">Thymeleaf</span>
-                            </div>
-
-                            <div class="buttons">
-                                <a href="https://github.com/Vertonowsky/Online-Courses" target="_blank"><img src="/images/github-logo.png" alt="github"> Source code</a>
-                                <!--                                <a href="" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live demo</a>-->
                             </div>
                         </div>
 
@@ -183,16 +168,16 @@
 
                     <div class="project_images">
                         <div class="project_img active" onclick="nextSlide()">
-                            <img src="images/project_1_1.png" alt="song">
+                            <img src="images/project_1_1.png" alt="arrow">
                         </div>
                         <div class="project_img next" onclick="nextSlide()">
-                            <img src="images/project_2_1.png" alt="song">
+                            <img src="images/project_2_1.png" alt="arrow">
                         </div>
                         <div class="project_img" onclick="nextSlide()">
-                            <img src="images/project_3_1.png" alt="song">
+                            <img src="images/project_3_1.png" alt="arrow">
                         </div>
                         <div class="project_img" onclick="nextSlide()">
-                            <img src="images/project_4_1.png" alt="song">
+                            <img src="images/project_4_1.png" alt="arrow">
                         </div>
                     </div>
 
@@ -218,15 +203,15 @@
                     </div>
 
                     <div class="timeline-content">
-                        <h2>Java backend developer [Spring, JavaEE]</h2>
+                        <h2 data-key="Work_1_title"> </h2>
                         <ul>
-                            <li>I am being a part of a backend team developing player.pl media software</li>
-                            <li>I take part in developing the PostgreSQL database using sql queries</li>
-                            <li>I am responsible for building production packages, code review, keeping documentation up to date, writing clean code</li>
+                            <li data-key="Work_1_description_1"> </li>
+                            <li data-key="Work_1_description_2"> </li>
+                            <li data-key="Work_1_description_3"> </li>
                         </ul>
                         <div class="date">
-                            <h2>2023 - now </h2>
-                            <p><b>Redge Technologies</b>, <span class="position">Junior Java Developer</span></p>
+                            <h2 data-key="Work_1_date"> </h2>
+                            <p><b data-key="Work_1_company"> </b>, <span data-key="Work_1_position" class="position"> </span></p>
                         </div>
                     </div>
                 </div>
@@ -240,16 +225,17 @@
                     </div>
 
                     <div class="timeline-content">
-                        <h2>C# backend developer [IBM]</h2>
+                        <h2 data-key="Work_2_title"> </h2>
                         <ul>
-                            <li>Developed a computer application allowing users to download files from the cloud</li>
-                            <li>Implemented advanced download scripts using the IBM FileNet API</li>
+                            <li data-key="Work_2_description_1"> </li>
+                            <li data-key="Work_2_description_2"> </li>
                         </ul>
                         <div class="date">
-                            <h2>2022 - 2023</h2>
-                            <p><b>GAZ-SYSTEM</b>, <span class="position">Junior C# Developer</span></p>
+                            <h2 data-key="Work_2_date"> </h2>
+                            <p><b data-key="Work_2_company"> </b>, <span data-key="Work_2_position" class="position"> </span></p>
                         </div>
                     </div>
+
                 </div>
 
                 <div class="timeline-block">
@@ -261,15 +247,15 @@
                     </div>
 
                     <div class="timeline-content">
-                        <h2>Python backend developer [Flask]</h2>
+                        <h2 data-key="Work_3_title"> </h2>
                         <ul>
-                            <li>Developed web application using Flask framework</li>
-                            <li>Performed unit tests and logged issues into the system</li>
-                            <li>Designed new layouts using Figma</li>
+                            <li data-key="Work_3_description_1"> </li>
+                            <li data-key="Work_3_description_2"> </li>
+                            <li data-key="Work_3_description_3"> </li>
                         </ul>
                         <div class="date">
-                            <h2>July 2021</h2>
-                            <p><b>Euromind</b>, <span class="position">Erasmus+ Internship participant</span></p>
+                            <h2 data-key="Work_3_date"> </h2>
+                            <p><b data-key="Work_3_company"> </b>, <span data-key="Work_3_position" class="position"> </span></p>
                         </div>
                     </div>
                 </div>
@@ -283,15 +269,15 @@
                     </div>
 
                     <div class="timeline-content">
-                        <h2>Programming coach [Java, LUA]</h2>
+                        <h2 data-key="Work_4_title"> </h2>
                         <ul>
-                            <li>Leaded group programming classes for children aged between 7 and 12 years old</li>
-                            <li>Maintained and inspected computer hardware</li>
-                            <li>Developed Minecraft plugins using Java language and Bukkit API</li>
+                            <li data-key="Work_4_description_1"> </li>
+                            <li data-key="Work_4_description_2"> </li>
+                            <li data-key="Work_4_description_3"> </li>
                         </ul>
                         <div class="date">
-                            <h2>2017 - 2020</h2>
-                            <p><b>Mindcloud</b>, <span class="position">Certified Mindcloud Coach</span></p>
+                            <h2 data-key="Work_4_date"> </h2>
+                            <p><b data-key="Work_4_company"> </b>, <span data-key="Work_4_position" class="position"> </span></p>
                         </div>
                     </div>
                 </div>
@@ -303,29 +289,29 @@
                 <div class="inner">
                     <div id="box_1" class="box">
                         <div class="body">
-                            <h2>Let's create something incredible together</h2>
-                            <p>I strongly believe that there is an area where we will find a common language and we will create something that the world hasn't seen before!</p>
+                            <h2 data-key="ContactTitle"> </h2>
+                            <p data-key="ContactDescription"> </p>
 
-                            <button class="button_contact">E-mail me!</button>
+                            <button data-key="EmailMe" class="button_contact"> </button>
                         </div>
                     </div>
                     <div id="box_2" class="box"></div>
                     <div id="frame">
-                        <h2>Leave a trace and i will contact you!</h2>
+                        <h2 data-key="ContactLeave"> </h2>
 
                         <div class="group">
                             <input id="name" type="text" required />
-                            <label for="name">Name</label>
+                            <label data-key="DataName"> for="name"></label>
                             <span class="bar"></span>
                         </div>
 
                         <div class="group">
                             <input id="email" type="text" required />
-                            <label for="email">E-mail</label>
+                            <label data-key="DataEmail"> for="email"></label>
                             <span class="bar"></span>
                         </div>
 
-                        <button class="button_contact">Send!</button>
+                        <button data-key="Send" class="button_contact"> </button>
                     </div>
                 </div>
 
@@ -339,7 +325,7 @@
                     <div id="footer_heading"></div>
 
                     <div id="footer_bottom">
-                        <p class="info">Copyright © 2024. Designed by Bartosz Malec</p>
+                        <p data-key="FooterCopyright" class="info"></p>
 
                         <div id="social">
                             <a href="https://www.linkedin.com/in/bartosz-malec-a6a36418b/" target="_blank" class="social_media"><img src="/images/linkedin-logo.png" alt="linkedin"></a>
@@ -354,6 +340,7 @@
 
         <script src="scripts/timeline.js"></script>
         <script src="scripts/slider.js" type="application/javascript"></script>
+        <script src="scripts/translations.js" type="application/javascript"></script>
 
     <script>
 

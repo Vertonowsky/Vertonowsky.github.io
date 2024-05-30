@@ -8,6 +8,7 @@
         <link rel="stylesheet" type="text/css" href="styles/main.css">
         <link rel="stylesheet" type="text/css" href="styles/index.css">
         <link rel="stylesheet" type="text/css" href="styles/header.css">
+        <link rel="stylesheet" type="text/css" href="styles/cookies.css">
         <link rel="stylesheet" type="text/css" href="styles/timeline.css">
         <link rel="stylesheet" type="text/css" href="styles/slider.css">
         <link rel="stylesheet" type="text/css" href="styles/contact.css">
@@ -23,9 +24,15 @@
 
             <div id="header">
 
-                <div class="language-selector">
-                    <img src="images/en.png" alt="English" data-lang="en" class="flag">
-                    <img src="images/pl.png" alt="Polski" data-lang="pl" class="flag">
+                <div class="custom-select">
+                    <div class="custom-select-trigger">
+                        <span>EN</span>
+                        <div class="arrow"></div>
+                    </div>
+                    <div class="custom-options">
+                        <span class="custom-option selected" data-lang="en">EN</span>
+                        <span class="custom-option" data-lang="pl">PL</span>
+                    </div>
                 </div>
                 <a data-key="HeaderButtonStart" href="#banner"> </a>
                 <a data-key="HeaderButtonProjects" href="#section_1"> </a>
@@ -107,7 +114,7 @@
                             </div>
 
                             <div class="buttons">
-                                <a href="https://github.com/Vertonowsky/Online-Courses" target="_blank"><img data-key="SourceCode" src="/images/github-logo.png" alt="github"/> Source code</a>
+                                <a href="https://github.com/Vertonowsky/Online-Courses" target="_blank"><img src="/images/github-logo.png" alt="github"/><span data-key="SourceCode"></span> </a>
 <!--                                <a href="" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live demo</a>-->
                             </div>
                         </div>
@@ -128,7 +135,7 @@
                             </div>
 
                             <div class="buttons">
-                                <a href="https://github.com/Vertonowsky/Leds-Controller" target="_blank"><img data-key="SourceCode" src="/images/github-logo.png" alt="github"> Source code</a>
+                                <a href="https://github.com/Vertonowsky/Leds-Controller" target="_blank"><img src="/images/github-logo.png" alt="github"><span data-key="SourceCode"></span> </a>
                                 <!--                        <a href="" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live demo</a>-->
                             </div>
                         </div>
@@ -157,8 +164,8 @@
                             </div>
 
                             <div class="buttons">
-                                <a href="https://github.com/Vertonowsky/admin-panel-frontend" target="_blank"><img data-key="SourceCode" src="/images/github-logo.png" alt="github"> Frontend - React</a>
-                                <a href="https://github.com/Vertonowsky/admin-panel-backend" target="_blank"><img data-key="SourceCode" src="/images/github-logo.png" alt="github"> Backend - Spring</a>
+                                <a href="https://github.com/Vertonowsky/admin-panel-frontend" target="_blank"><img src="/images/github-logo.png" alt="github"> Frontend - React</a>
+                                <a href="https://github.com/Vertonowsky/admin-panel-backend" target="_blank"><img src="/images/github-logo.png" alt="github"> Backend - Spring</a>
                                 <!--                        <a href="" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live demo</a>-->
                             </div>
                         </div>
@@ -176,9 +183,6 @@
                         <div class="project_img" onclick="nextSlide()">
                             <img src="images/project_3_1.png" alt="arrow">
                         </div>
-                        <div class="project_img" onclick="nextSlide()">
-                            <img src="images/project_4_1.png" alt="arrow">
-                        </div>
                     </div>
 
 				</div>
@@ -187,7 +191,6 @@
                     <div class="slide active" onclick="specificSlide(1)"></div>
                     <div class="slide" onclick="specificSlide(2)"></div>
                     <div class="slide" onclick="specificSlide(3)"></div>
-                    <div class="slide" onclick="specificSlide(4)"></div>
                 </div>
 			</div>
 
@@ -336,107 +339,18 @@
 
             </div>
 
+            <div id="cookiePopup">
+                <p data-key="CookieInfo"></p>
+                <button data-key="CookieAccept" id="acceptCookie"></button>
+            </div>
+
         </div>
 
-        <script src="scripts/timeline.js"></script>
+        <script src="scripts/header.js" type="application/javascript"></script>
         <script src="scripts/slider.js" type="application/javascript"></script>
+        <script src="scripts/timeline.js" type="application/javascript"></script>
+        <script src="scripts/cookies.js" type="application/javascript"></script>
         <script src="scripts/translations.js" type="application/javascript"></script>
-
-    <script>
-
-
-        const header = document.getElementById("header");
-
-
-        window.onscroll = function () {
-            if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40)
-                header.classList.add("active");
-            else
-                header.classList.remove("active");
-        };
-
-
-        window.onload = function () {
-            if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40)
-                header.classList.add("active");
-            else
-                header.classList.remove("active");
-        };
-
-
-
-        const cards = document.getElementsByClassName("card");
-        const details = document.getElementsByClassName("card_details");
-
-        function openProject(element) {
-            if (element.classList.contains("active"))
-                return;
-
-            if (element.classList.contains("next"))
-                moveToLeft();
-            else
-                moveToRight();
-
-
-            const index = element.dataset.index;
-            for (let i=0; i < details.length; i++) {
-                if (index === i)
-                    continue;
-
-                details[i].classList.remove("active");
-            }
-
-            details[index].classList.add("active");
-        }
-
-        function moveToLeft() {
-            for (let i = 0; i < cards.length; i++) {
-                const card = cards[i];
-
-                if (card.classList.contains("active")) {
-                    card.classList.remove("active");
-                    card.classList.add("previous");
-                    continue;
-                }
-
-                if (card.classList.contains("previous")) {
-                    card.classList.remove("previous");
-                    card.classList.add("next");
-                    continue;
-                }
-
-                if (card.classList.contains("next")) {
-                    card.classList.remove("next");
-                    card.classList.add("active");
-                }
-            }
-        }
-
-
-        function moveToRight() {
-            for (let i = 0; i < cards.length; i++) {
-                const card = cards[i];
-
-                if (card.classList.contains("active")) {
-                    card.classList.remove("active");
-                    card.classList.add("next");
-                    continue;
-                }
-
-                if (card.classList.contains("previous")) {
-                    card.classList.remove("previous");
-                    card.classList.add("active");
-                    continue;
-                }
-
-                if (card.classList.contains("next")) {
-                    card.classList.remove("next");
-                    card.classList.add("previous");
-                }
-            }
-        }
-
-    </script>
 
     </body>
 

@@ -9,10 +9,11 @@
         <link rel="stylesheet" type="text/css" href="styles/index.css">
         <link rel="stylesheet" type="text/css" href="styles/header.css">
         <link rel="stylesheet" type="text/css" href="styles/cookies.css">
-        <link rel="stylesheet" type="text/css" href="styles/timeline.css">
         <link rel="stylesheet" type="text/css" href="styles/slider.css">
+        <link rel="stylesheet" type="text/css" href="styles/timeline.css">
         <link rel="stylesheet" type="text/css" href="styles/contact.css">
         <link rel="stylesheet" type="text/css" href="styles/footer.css">
+        <link rel="stylesheet" type="text/css" href="styles/popup.css">
 
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -295,7 +296,7 @@
                             <h2 data-key="ContactTitle"> </h2>
                             <p data-key="ContactDescription"> </p>
 
-                            <button data-key="EmailMe" class="button_contact"> </button>
+                            <button data-key="EmailMe" class="button_contact" onClick="showPopup()"> </button>
                         </div>
                     </div>
                     <div id="box_2" class="box"></div>
@@ -314,7 +315,7 @@
                             <span class="bar"></span>
                         </div>
 
-                        <button data-key="Send" class="button_contact"> </button>
+                        <button data-key="Send" class="button_contact" onClick="showPopup()"> </button>
                     </div>
                 </div>
 
@@ -344,13 +345,19 @@
                 <button data-key="CookieAccept" id="acceptCookie"></button>
             </div>
 
+            <div id="popup_info">
+                <h1 id="popup_title"><i class='icon fas fa-check'></i><span data-key="PopupInfo"></span> </h1>
+                <i id="popup_close" class="fas fa-times"></i>
+            </div>
+
         </div>
 
         <script src="scripts/header.js" type="application/javascript"></script>
+        <script src="scripts/cookies.js" type="application/javascript"></script>
         <script src="scripts/slider.js" type="application/javascript"></script>
         <script src="scripts/timeline.js" type="application/javascript"></script>
-        <script src="scripts/cookies.js" type="application/javascript"></script>
         <script src="scripts/translations.js" type="application/javascript"></script>
+        <script src="scripts/popup.js" type="application/javascript"></script>
 
     </body>
 

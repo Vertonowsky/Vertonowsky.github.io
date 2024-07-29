@@ -3,7 +3,7 @@
     width: 90%;
     max-width: 1170px;
     margin: 3em auto;
-    padding-bottom: 100px;
+    padding-bottom: 10px;
 }
 
 /* Vertical line */
@@ -254,7 +254,7 @@
     }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 650px) {
 
     .timeline-block:hover .pulse {
         animation: pulsing 1.8s ease-in-out;
@@ -285,8 +285,40 @@
 
 }
 
-
 @media screen and (max-width: 1024px) {
+
+    .timeline-content {
+        padding: 10px;
+    }
+
+        .timeline-content h2 {
+            font-size: 16px;
+        }
+
+    .timeline-content ul {
+        padding-left: 20px;
+        font-size: var(--font-size-normal);
+    }
+
+    .timeline-content .date h2 {
+        font-size: 17px;
+    }
+
+    .timeline-content .date p {
+        font-size: var(--font-size-normal);
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    #timeline {
+        width: 95%;
+    }
+
+}
+
+@media screen and (max-width: 650px) {
 
     #timeline::before {
         left: 18px;
@@ -302,12 +334,6 @@
         }
 
 
-    .timeline-content {
-        margin-left: 80px;
-        padding: 20px;
-        width: calc(100% - 80px);
-    }
-
     .timeline-block:nth-child(even) .timeline-content {
         float: left;
     }
@@ -320,49 +346,32 @@
             border-right-color: #727580;
         }
 
+        .timeline-content {
+            display: flex;
+            flex-direction: column;
+            margin-left: 60px;
+            width: calc(100% - 80px);
+            padding: 0 10px 10px 10px;
+        }
+
         .timeline-content .date, .timeline-block:nth-child(even) .timeline-content .date {
             position: relative;
             width: auto;
             left: auto;
             right: auto;
-            top: auto;
+            top: 0;
             text-align: left;
+            order: 1;
         }
 
-}
-
-@media screen and (max-width: 780px) {
-
-    #timeline {
-        width: 96%;
-    }
-
-    #timeline::before {
-        left: 18px;
-    }
-
-    .timeline-content {
-        margin-left: 55px;
-        padding: 15px;
-        width: calc(100% - 55px);
-    }
-
-    .timeline-content h2 {
-        font-size: 16px;
-    }
-
-
-    .timeline-content ul {
-        padding-left: 25px;
-        font-size: var(--font-size-smaller);
-    }
-
-        .timeline-content .date h2 {
-            font-size: 16px;
+        .timeline-content h2 {
+            order: 2;
+            margin: 6px 0 5px 0;
         }
 
-        .timeline-content .date p {
-            font-size: var(--font-size-smaller);
+        .timeline-content ul {
+            margin-top: 0;
+            order: 3;
         }
 
 }

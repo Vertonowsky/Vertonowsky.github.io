@@ -36,6 +36,6 @@ a {
 }
 
 b {
-    color: #03A7DC;
+    color: var(--color-gray);
     font-weight: normal;
 }

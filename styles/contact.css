@@ -117,8 +117,9 @@
     box-shadow: 0 0 25px 0 #3C3D42;
     border-radius: 20px;
     padding: 15px 30px;
-    z-index: 5;
     text-align: center;
+    animation: 1s slideFromBottom ease-in-out;
+    z-index: 5;
 }
 
     #frame h2 {

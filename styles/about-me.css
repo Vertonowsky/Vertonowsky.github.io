@@ -259,4 +259,128 @@
 
 @media (max-width: 1280px) {
 
+    .title_holder {
+        width: 380px;
+    }
+
+    .title_holder p {
+        font-size: 22px;
+    }
+
+    #about_me .container {
+        width: 95%;
+    }
+
+}
+
+@media (max-width: 1024px) {
+
+    #about_me .inner {
+        width: 85%;
+    }
+
+    #about_me .container {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 950px) {
+
+    #about_me .container {
+        flex-direction: column;
+        gap: 100px;
+    }
+
+        #about_me .inner .left {
+            position: relative;
+            width: 100%;
+        }
+
+            .desc {
+                max-width: 700px;
+                margin: auto;
+            }
+
+            .hobbies {
+                margin-top: 20px;
+                justify-content: center;
+            }
+
+
+        #about_me .inner .right {
+            position: relative;
+            flex-flow: column wrap;
+            width: auto;
+            max-width: none;
+            margin: auto;
+        }
+
+        .ability_container {
+            width: 90%;
+            margin: auto;
+            max-width: none;
+            justify-content: center;
+        }
+
+        .ability {
+            width: 15%;
+            height: 15%;
+        }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .ability {
+        width: calc(20% - 10px);
+        height: auto;
+    }
+
+    .ability p {
+        font-size: 14px;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .ability_container {
+        width: 95%;
+    }
+
+    .ability {
+        width: calc(25% - 10/3*4px);
+        height: auto;
+    }
+
+    .ability p {
+        font-size: 14px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .title_holder {
+        width: 90%;
+    }
+
+    .title_holder p {
+        font-size: 19px;
+    }
+
+    .ability {
+        width: calc(33% - 10/2*3px);
+        height: auto;
+    }
+
+    .ability p {
+        font-size: var(--font-size-smaller);
+    }
+
 }

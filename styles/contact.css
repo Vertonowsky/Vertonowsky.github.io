@@ -77,6 +77,7 @@
 
         #box_1 .button_contact {
             position: absolute;
+            text-align: center;
             bottom: -20px;
             left: 0;
             right: 0;
@@ -122,9 +123,20 @@
     z-index: 5;
 }
 
+    #frame .quote {
+        color: var(--color-gold);
+        font-weight: bold;
+        font-style: italic;
+        margin: 30px 0;
+    }
+
+    #frame b {
+        color: var(--color-gold);
+    }
+
     #frame h2 {
         font-size: 18px;
-        margin: 10px 0 60px 0;
+        margin: 10px 0 0 0;
         width: 100%;
         text-align: center;
     }

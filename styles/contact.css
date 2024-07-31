@@ -141,10 +141,14 @@
         text-align: center;
     }
 
+    #frame .desc {
+        margin-bottom: 30px;
+    }
+
     #frame .button_contact {
         position: relative;
         width: 80%;
-        margin-top: 30px;
+        padding: 10px 30px;
         background: #A18A4D;
     }
 
@@ -242,7 +246,6 @@
     }
 
         #frame h2 {
-            font-size: 16px;
             margin-bottom: 45px;
         }
 
@@ -280,7 +283,12 @@
     #box_1 .button_contact {
         position: relative;
         bottom: auto;
-        margin-top: 30px;
+        width: auto;
+        padding: 10px 30px;
+    }
+
+    #box_1 p {
+        margin-bottom: 30px;
     }
 
     #box_2 {
@@ -314,34 +322,61 @@
         font-size: var(--font-size-smaller);
     }
 
-    #box_1 .button_contact {
-        padding: 10px 0;
-    }
-
     #frame {
         width: 90%;
         max-width: 300px;
     }
 
-    #frame .button_contact {
-        margin-top: 0;
-        padding: 10px 0;
+    #frame p {
+        font-size: var(--font-size-smaller);
     }
 
 }
 
 @media screen and (max-width: 350px) {
 
-    #box_1 h2 {
-        font-size: 16px;
+    #box_1 {
+        padding: 15px;
     }
 
-    #box_1 p {
-        font-size: var(--font-size-phone);
+        #box_1 h2 {
+            font-size: 16px;
+        }
+
+        #box_1 .body {
+            padding-bottom: 40px;
+        }
+
+        #box_1 p, #frame p {
+            font-size: var(--font-size-phone);
+        }
+
+        #box_1 .button_contact, #frame .button_contact {
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 80%;
+            padding: 8px 4px;
+        }
+
+    #frame {
+        padding: 15px 15px 50px 15px;
     }
 
-    #box_1 .button_contact {
-        width: 85%;
-    }
+        #frame h2 {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        #frame .quote {
+            margin: 20px 0;
+        }
+
+
+
+        #frame .button_contact {
+            padding: 8px 2px;
+        }
 
 }

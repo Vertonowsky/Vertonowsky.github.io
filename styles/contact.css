@@ -67,6 +67,7 @@
             height: 100%;
             left: 250px;
             text-align: left;
+            color: #A3A4A6;
         }
 
         #box_1 h2 {
@@ -143,6 +144,7 @@
 
     #frame .desc {
         margin-bottom: 30px;
+        color: #A3A4A6;
     }
 
     #frame .button_contact {

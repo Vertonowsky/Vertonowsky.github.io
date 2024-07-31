@@ -4,6 +4,7 @@
     max-width: 1170px;
     margin: 3em auto;
     padding-bottom: 10px;
+    scroll-margin-top: 120px;
 }
 
 /* Vertical line */

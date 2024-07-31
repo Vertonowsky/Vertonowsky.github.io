@@ -4,6 +4,7 @@
     text-align: center;
     background: #1C1D21;
     padding: 80px 0 150px 0;
+    scroll-margin-top: 40px;
 }
 
 #about_me .inner {

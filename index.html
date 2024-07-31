@@ -14,7 +14,6 @@
         <link rel="stylesheet" type="text/css" href="styles/timeline.css">
         <link rel="stylesheet" type="text/css" href="styles/contact.css">
         <link rel="stylesheet" type="text/css" href="styles/footer.css">
-        <link rel="stylesheet" type="text/css" href="styles/popup.css">
 
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -399,7 +398,7 @@
 
                     <div class="timeline-content">
                         <h2 data-key="Work_3_title"> Loading .. </h2>
-                        <p>Miesiączny staż w zagranicznej firmie znacznie wpłynął na mój rozwój osobisty. Jako Python developer:</p>
+                        <p>Staż w zagranicznej firmie znacznie wpłynął na mój rozwój osobisty. Jako Python developer:</p>
                         <ul>
                             <li data-key="Work_3_description_1"> </li>
                             <li data-key="Work_3_description_2"> </li>
@@ -444,26 +443,14 @@
                             <h2 data-key="ContactTitle"> Loading .. </h2>
                             <p data-key="ContactDescription"> </p>
 
-                            <button data-key="EmailMe" class="button_contact" onClick="showPopup()"> </button>
+                            <button data-key="EmailMe" class="button_contact"></button>
                         </div>
                     </div>
                     <div id="box_2" class="box"></div>
                     <div id="frame">
                         <h2 data-key="ContactLeave"> Loading .. </h2>
 
-                        <div class="group">
-                            <input id="name" type="text" required>
-                            <label data-key="DataName" for="name"></label>
-                            <span class="bar"></span>
-                        </div>
-
-                        <div class="group">
-                            <input id="email" type="text" required>
-                            <label data-key="DataEmail" for="email"></label>
-                            <span class="bar"></span>
-                        </div>
-
-                        <button data-key="Send" class="button_contact" onClick="showPopup()"> </button>
+                        <button class="button_contact"><i class="fa-solid fa-download"></i>Pobierz CV</button>
                     </div>
                 </div>
 
@@ -493,11 +480,6 @@
                 <button data-key="CookieAccept" id="acceptCookie"></button>
             </div>
 
-            <div id="popup_info">
-                <p id="popup_title"><i class='icon fas fa-check'></i><span data-key="PopupInfo"></span> </p>
-                <i id="popup_close" class="fas fa-times"></i>
-            </div>
-
         </div>
 
         <script src="scripts/header.js"></script>
@@ -506,7 +488,6 @@
         <script src="scripts/slider.js"></script>
         <script src="scripts/timeline.js"></script>
         <script src="scripts/translations.js"></script>
-        <script src="scripts/popup.js"></script>
 
     </body>
 

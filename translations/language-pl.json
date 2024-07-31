@@ -1,7 +1,7 @@
 {
   "ContactTitle": "Wspólnie stwórzmy coś niesamowitego",
   "ContactDescription": "Wierzę, że znajdziemy wspólny język i stworzymy coś, czego świat jeszcze nie widział!",
-  "ContactLeave": "Zostaw po sobie jakiś ślad!",
+  "ContactLeave": "Porozmawiajmy!",
   "CookieAccept": "Akceptuj",
   "CookieInfo": "Ta strona używa plików cookie, aby zapewnić użytkownikom najwyższy możliwy komfort. Nasza polityka prywatności nie obejmuje przechowywania danych podanych podanych przez użytkownika, a formularze wysyłane są drogą mailową bezpośrednio do właściciela.",
   "DataName": "Imię",
@@ -13,7 +13,6 @@
   "HeaderButtonProjects": "Projekty",
   "HeaderButtonStart": "Start",
   "PopupInfo": "Dziękuję za wiadomość! Postaram się odpowiedzieć tak szybko jak to możliwe!",
-  "Send": "Wyślij",
   "SourceCode": "Kod źródłowy",
   "TechnologiesUsed": "Użyte technologie:",
   "TitleProjects": "Moje Projekty",

@@ -29,7 +29,7 @@
         height: 100%;
     }
 
-    #contact button {
+    #contact .button_contact {
         padding: 12px 0;
         border-radius: 15px;
         background: #46A0C7;
@@ -40,7 +40,7 @@
         transition: background 0.3s;
     }
 
-    #contact button:hover {
+    #contact .button_contact:hover {
         background: #3E8AAD;
     }
 
@@ -75,7 +75,7 @@
             color: var(--color-gold);
         }
 
-        #box_1 button {
+        #box_1 .button_contact {
             position: absolute;
             bottom: -20px;
             left: 0;
@@ -129,80 +129,21 @@
         text-align: center;
     }
 
-    #frame button {
+    #frame .button_contact {
         position: relative;
         width: 80%;
         margin-top: 30px;
+        background: #A18A4D;
     }
 
-
-
-
-.group {
-    position: relative;
-    margin-bottom: 45px;
-}
-
-
-    .group input {
-        font-size: var(--font-size-normal);
-        padding: 10px 10px 10px 5px;
-        display: block;
-        width: 100%;
-        background: transparent;
-        border: none;
-        color: var(--color-default);
-        border-bottom: 2px solid #595E61;
+    #frame .button_contact i {
+        margin-right: 5px;
     }
 
-    .group input:focus {
-        outline: none;
+    #frame .button_contact:hover  {
+        background: #877441;
     }
 
-    .group label {
-        color: var(--color-default);
-        font-size: var(--font-size-normal);
-        font-weight: normal;
-        position: absolute;
-        pointer-events: none;
-        left: 5px;
-        top: 10px;
-        transition: 0.3s ease all;
-    }
-
-    .group input:focus ~ label, .group input:valid ~ label {
-        top: -18px;
-        font-size: 14px;
-        color: var(--color-gold);
-    }
-
-    .bar {
-        position: relative;
-        display: block;
-        width: 100%;
-    }
-
-        .bar:before, .bar:after {
-            content: '';
-            height: 2px;
-            width: 0;
-            bottom: 0;
-            position: absolute;
-            background: var(--color-gold);
-            transition: 0.3s ease all;
-        }
-
-        .bar:before {
-            left: 50%;
-        }
-
-        .bar:after {
-            right: 50%;
-        }
-
-        .group input:focus ~ .bar:before, .group input:focus ~ .bar:after {
-            width: 50%;
-        }
 
 
 
@@ -334,8 +275,7 @@
         width: 120px;
         height: 120px;
         right: 0;
-        border-radius: 0;
-        border-top-left-radius: 15px;
+        border-radius: 0 0 0 15px;
     }
 
     #box_3 {
@@ -355,11 +295,11 @@
 @media screen and (max-width: 580px) {
 
     #box_1 h2 {
-        font-size: var(--font-size-smaller);
+        font-size: 18px;
     }
 
-    #box_1 h2 {
-        font-size: 20px;
+    #box_1 p {
+        font-size: var(--font-size-smaller);
     }
 
     #box_1 .button_contact {
@@ -374,6 +314,22 @@
     #frame .button_contact {
         margin-top: 0;
         padding: 10px 0;
+    }
+
+}
+
+@media screen and (max-width: 350px) {
+
+    #box_1 h2 {
+        font-size: 16px;
+    }
+
+    #box_1 p {
+        font-size: var(--font-size-phone);
+    }
+
+    #box_1 .button_contact {
+        width: 85%;
     }
 
 }

@@ -124,6 +124,7 @@
             display: flex;
             flex-direction: row;
             gap: 5px;
+            flex-wrap: wrap;
         }
 
         .hobby {
@@ -296,6 +297,7 @@
     #about_me .container {
         flex-direction: column;
         gap: 100px;
+        margin-top: 50px;
     }
 
         #about_me .inner .left {
@@ -311,6 +313,15 @@
             .hobbies {
                 margin-top: 20px;
                 justify-content: center;
+            }
+
+            .hobby {
+                height: 45px;
+                padding: 4px;
+            }
+
+            .hobby img {
+                max-width: 25px;
             }
 
 
@@ -361,8 +372,16 @@
         font-size: 18px;
     }
 
+    .education .block img {
+        max-width: 50px;
+    }
+
     .info h3 {
-        font-size: 16px;
+        font-size: var(--font-size-normal);
+    }
+
+    .desc .desc_heading {
+        font-size: var(--font-size-normal);
     }
 
     .ability_container {
@@ -395,11 +414,40 @@
     }
 
     .ability {
-        width: calc(25% - 10/3*3px);
+        width: calc(25% - 10px);
+    }
+
+    .ability img {
+        max-width: 25px;
     }
 
     .ability p {
-        font-size: var(--font-size-smaller);
+        font-size: var(--font-size-phone);
+    }
+
+}
+
+@media (max-width: 420px) {
+
+    .ability {
+        width: calc(33% - 10px);
+    }
+
+    .ability img {
+        max-width: 35px;
+    }
+
+}
+
+@media (max-width: 340px) {
+
+    .ability {
+        width: calc(50% - 10px);
+        max-width: 80px;
+    }
+
+    .ability img {
+        max-width: 45px;
     }
 
 }

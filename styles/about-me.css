@@ -371,7 +371,6 @@
 
     .ability {
         width: calc(25% - 10/3*4px);
-        height: auto;
     }
 
     .ability p {
@@ -391,9 +390,12 @@
         font-size: 19px;
     }
 
+    .ability_container {
+        width: 100%;
+    }
+
     .ability {
-        width: calc(33% - 10/2*3px);
-        height: auto;
+        width: calc(25% - 10/3*3px);
     }
 
     .ability p {

@@ -98,11 +98,6 @@
             justify-content: center;
         }
 
-            #social .social_link:first-child {
-                margin-right: 12px;
-            }
-
-
 
 
     @media screen and (max-width: 1024px) {

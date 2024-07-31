@@ -121,6 +121,7 @@
     padding: 15px;
     box-shadow: 0 3px 0 #55575E;
     margin-left: 0;
+    font-size: 16px;
     background: rgba(52, 53, 59, 0.7);
     clear: both;
     left: 0;
@@ -138,9 +139,16 @@
         border-left-color: #727580;
     }
 
+        .timeline-content p {
+            margin: 5px 0 6px 0;
+            line-height: 20px;
+            color: #B1B3B3;
+        }
+
         .timeline-content ul {
-            padding-left: 35px;
-            font-size: 16px;
+            padding-left: 30px;
+            margin: 0;
+            color: #B1B3B3;
         }
 
         .timeline-content li {

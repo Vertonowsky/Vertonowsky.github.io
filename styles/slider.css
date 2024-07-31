@@ -178,9 +178,8 @@
                     background: #2F3238;
                 }
 
-                .buttons a > img {
-                    width: 20px;
-                    height: 20px;
+                .buttons a > i {
+                    font-size: 17px;
                     margin-right: 5px;
                 }
 
@@ -493,11 +492,6 @@
         border-radius: 8px;
         padding: 8px 10px;
         font-size: var(--font-size-smaller);
-    }
-
-    .buttons a > img {
-        width: 18px;
-        height: 18px;
     }
 
 }

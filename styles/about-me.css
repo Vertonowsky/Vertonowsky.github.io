@@ -55,6 +55,7 @@
         .desc .bio {
             width: 90%;
             margin: 0 auto 40px auto;
+            font-size: var(--font-size-normal);
             color: #8A8C94;
         }
 
@@ -288,6 +289,10 @@
 
 @media (max-width: 950px) {
 
+    #about_me {
+        padding-bottom: 80px;
+    }
+
     #about_me .container {
         flex-direction: column;
         gap: 100px;
@@ -347,6 +352,18 @@
 
 
 @media (max-width: 650px) {
+
+    .desc .bio {
+        font-size: var(--font-size-smaller);
+    }
+
+    .desc .prefix {
+        font-size: 18px;
+    }
+
+    .info h3 {
+        font-size: 16px;
+    }
 
     .ability_container {
         width: 95%;
